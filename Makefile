@@ -17,10 +17,10 @@ BUILD      := build
 
 MODELOS   := $(wildcard modelos/0*.tex)
 OFICIOS   := $(wildcard empresas/[0-9]*.tex)
-DOSSIE    := dossie/01_dossie_institucional.tex
+DOSSIES   := dossie/01_dossie_institucional.tex dossie/03_resumo_executivo.tex
 DIRETORIO := empresas/diretorio_contatos.tex
 
-SOURCES := $(MODELOS) $(OFICIOS) $(DOSSIE) $(DIRETORIO)
+SOURCES := $(MODELOS) $(OFICIOS) $(DOSSIES) $(DIRETORIO)
 PDFS    := $(patsubst %.tex,$(BUILD)/%.pdf,$(notdir $(SOURCES)))
 
 .PHONY: all oficios dossie modelos diretorio verificar clean
@@ -30,7 +30,7 @@ verificar:
 	@python3 ferramentas/verifica_consistencia.py
 
 oficios:   $(patsubst %.tex,$(BUILD)/%.pdf,$(notdir $(OFICIOS)))
-dossie:    $(patsubst %.tex,$(BUILD)/%.pdf,$(notdir $(DOSSIE)))
+dossie:    $(patsubst %.tex,$(BUILD)/%.pdf,$(notdir $(DOSSIES)))
 modelos:   $(patsubst %.tex,$(BUILD)/%.pdf,$(notdir $(MODELOS)))
 diretorio: $(patsubst %.tex,$(BUILD)/%.pdf,$(notdir $(DIRETORIO)))
 
