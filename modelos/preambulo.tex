@@ -21,44 +21,39 @@
 \usepackage{tikz}
 \usetikzlibrary{positioning}
 
-\geometry{a4paper,top=2.05cm,bottom=2.2cm,left=2.5cm,right=2.5cm}
+\geometry{a4paper,top=2.0cm,bottom=2.2cm,left=2.5cm,right=2.5cm}
 
-% Paleta institucional e identidade do projeto
 \definecolor{azulpetroleo}{HTML}{0F4C5C}
 \definecolor{ambar}{HTML}{C8892D}
-\definecolor{cinzaclaro}{HTML}{F2F5F7}
-\definecolor{cinzaescuro}{HTML}{374151}
+\definecolor{cinzaclaro}{HTML}{F4F5F6}
+\definecolor{cinzaescuro}{HTML}{2F3437}
 \definecolor{cinzamedio}{HTML}{6B7280}
 \definecolor{ifmaverde}{HTML}{2F9E41}
 \definecolor{ifmavermelho}{HTML}{CD191E}
 
-\hypersetup{
-  colorlinks=true,
-  linkcolor=azulpetroleo,
-  urlcolor=azulpetroleo,
-  citecolor=azulpetroleo
-}
-
+\hypersetup{colorlinks=true,linkcolor=cinzaescuro,urlcolor=azulpetroleo,citecolor=azulpetroleo}
 \setlength{\parindent}{1.25cm}
-\setlength{\parskip}{0.35em}
-\onehalfspacing
+\setlength{\parskip}{0.30em}
+\setstretch{1.32}
 
-\titleformat{\section}{\large\bfseries\color{azulpetroleo}}{}{0pt}{}
-\titleformat{\subsection}{\normalsize\bfseries\color{azulpetroleo}}{}{0pt}{}
+% Títulos discretos para relatórios internos; os ofícios externos usam texto corrido.
+\titleformat{\section}{\normalsize\sffamily\bfseries\color{cinzaescuro}}{}{0pt}{}[\vspace{-0.35em}{\color{ifmaverde!70}\titlerule[0.45pt]}]
+\titlespacing*{\section}{0pt}{1.0em}{0.6em}
+\titleformat{\subsection}{\normalsize\sffamily\bfseries\color{cinzaescuro}}{}{0pt}{}
 
-% Cabeçalho corrido para páginas internas
+% Páginas internas: cabeçalho corrido discreto.
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small\sffamily\color{cinzaescuro} Departamento de Eletroeletrônica — DEE}
-\fancyhead[R]{\small\sffamily\color{cinzaescuro} IFMA — Campus São Luís/Monte Castelo}
-\fancyfoot[C]{\small\sffamily\color{cinzamedio} Página \thepage\ de \pageref{LastPage}}
-\renewcommand{\headrulewidth}{0.35pt}
+\fancyhead[L]{\footnotesize\sffamily\color{cinzamedio} IFMA · Campus São Luís/Monte Castelo}
+\fancyhead[R]{\footnotesize\sffamily\color{cinzamedio} Departamento de Eletroeletrônica — DEE}
+\fancyfoot[C]{\footnotesize\sffamily\color{cinzamedio} \thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.25pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Primeira página: sem cabeçalho corrido para não repetir a marca institucional
+% Primeira página sem cabeçalho corrido.
 \fancypagestyle{primeira}{%
   \fancyhf{}
-  \fancyfoot[C]{\small\sffamily\color{cinzamedio} Página \thepage\ de \pageref{LastPage}}
+  \fancyfoot[C]{\footnotesize\sffamily\color{cinzamedio} \thepage/\pageref{LastPage}}
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
 }
@@ -69,10 +64,9 @@
 \newcommand{\departamento}{Departamento de Eletroeletrônica — DEE}
 \newcommand{\cidade}{São Luís — MA}
 
-% Símbolo IF em construção vetorial, usando as cores institucionais.
-% A geometria segue a composição tradicional da marca dos Institutos Federais.
+% Símbolo IF em vetor, preservando a paleta institucional.
 \newcommand{\ifmasimbolo}{%
-\begin{tikzpicture}[x=0.235cm,y=0.235cm,baseline=(current bounding box.center)]
+\begin{tikzpicture}[x=0.255cm,y=0.255cm,baseline=(current bounding box.center)]
   \tikzset{bloco/.style={fill=ifmaverde,rounded corners=0.045cm}}
   \fill[ifmavermelho] (0,3.6) circle (0.39);
   \foreach \x/\y in {1.2/3.2,2.4/3.2,0/2,1.2/2,0/0.8,1.2/0.8,2.4/0.8,0/-0.4,1.2/-0.4}{%
@@ -80,45 +74,35 @@
 \end{tikzpicture}%
 }
 
-% Assinatura horizontal da marca para o cabeçalho.
+% Assinatura horizontal da marca.
 \newcommand{\marcaIFMA}{%
-\begin{tabular}{@{}c@{\hspace{0.42cm}}l@{}}
+\begin{tabular}{@{}c@{\hspace{0.5cm}}l@{}}
   \ifmasimbolo &
   \begin{tabular}{@{}l@{}}
-    {\sffamily\fontsize{10.8}{11.2}\selectfont\bfseries INSTITUTO FEDERAL}\\[-0.7mm]
-    {\sffamily\fontsize{5.8}{6.4}\selectfont DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA}\\[-0.2mm]
-    {\sffamily\fontsize{8.4}{9.0}\selectfont Maranhão}
+    {\sffamily\fontsize{12.3}{12.8}\selectfont\bfseries INSTITUTO FEDERAL}\\[-0.8mm]
+    {\sffamily\fontsize{6.1}{6.8}\selectfont DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA}\\[0.1mm]
+    {\sffamily\fontsize{9.1}{9.6}\selectfont Maranhão}
   \end{tabular}
 \end{tabular}%
 }
 
-% Cabeçalho principal: marca com maior respiro e identificação secundária discreta.
+% Cabeçalho da primeira página: central, sóbrio e com bastante respiro.
 \newcommand{\cabecalhoInstitucional}{%
 \thispagestyle{primeira}%
-\noindent
-\begin{minipage}[c]{0.47\textwidth}
-  \raggedright
-  \marcaIFMA
-\end{minipage}%
-\hfill
-\begin{minipage}[c]{0.47\textwidth}
-  \raggedleft\sffamily
-  {\small\bfseries\color{cinzaescuro}\campus}\\[1.3mm]
-  {\footnotesize\color{cinzamedio}\departamento}
-\end{minipage}
-
-\vspace{3.8mm}
-{\color{cinzaescuro!55}\hrule height 0.45pt}
-\vspace{5.2mm}
+\begin{center}
+  \marcaIFMA\\[4.0mm]
+  {\sffamily\fontsize{9.2}{10.4}\selectfont\bfseries\color{cinzaescuro} CAMPUS SÃO LUÍS — MONTE CASTELO}\\[1.0mm]
+  {\sffamily\fontsize{8.3}{9.5}\selectfont\color{cinzamedio} DEPARTAMENTO DE ELETROELETRÔNICA — DEE}\\[3.1mm]
+  {\color{ifmaverde!80}\rule{0.62\textwidth}{0.65pt}}
+\end{center}
+\vspace{3.5mm}
 }
 
+% Caixa neutra para informações internas, quando realmente necessária.
 \newtcolorbox{destaque}{
   colback=cinzaclaro,
-  colframe=azulpetroleo,
-  boxrule=0.55pt,
-  arc=1.5mm,
-  left=3mm,
-  right=3mm,
-  top=2.5mm,
-  bottom=2.5mm
+  colframe=cinzamedio!55,
+  boxrule=0.45pt,
+  arc=1.2mm,
+  left=3mm,right=3mm,top=2.4mm,bottom=2.4mm
 }
