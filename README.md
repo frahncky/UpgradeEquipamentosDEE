@@ -17,10 +17,10 @@ Repositório de modelos institucionais em LaTeX para organizar a prospecção, f
 
 ### Modelos personalizados por empresa
 
-A pasta `empresas/` contém um modelo-base compartilhado e **31 ofícios LaTeX personalizados**, organizados por prioridade:
+A pasta `empresas/` contém um modelo-base compartilhado e **38 ofícios LaTeX personalizados**, organizados por prioridade:
 
-- **P1 — Máxima:** Schneider Electric, Vale, Eneva, Equatorial Energia, WEG, Rockwell Automation, Siemens, Altus, Intelbras e Petrobras;
-- **P2 — Alta:** Festo, SMC, ABB, Alcoa/Alumar, Suzano, Hitachi Energy, Eaton, Phoenix Contact, Emerson, Fluke e FNIRSI;
+- **P1 — Máxima:** Schneider Electric, Vale, Eneva, Equatorial Energia, WEG, Rockwell Automation, Siemens, Altus, Intelbras, Petrobras, Schweitzer Engineering Laboratories (SEL) e Endress+Hauser;
+- **P2 — Alta:** Festo, SMC, ABB, Alcoa/Alumar, Suzano, Hitachi Energy, Eaton, Phoenix Contact, Emerson, Fluke, FNIRSI, RIGOL, SIGLENT, Universal Robots, FANUC e KUKA;
 - **P3 — Oportunidade:** Keysight, Tektronix/Keithley, National Instruments, Yaskawa, Mitsubishi Electric, Bosch Rexroth, Cisco, Huawei, Dell Technologies e Lenovo.
 
 Cada arquivo de empresa já contém área de atuação, setor recomendado para prospecção, estratégia, proposta de cooperação, equipamentos/quantidades sugeridos e canal institucional oficial.
