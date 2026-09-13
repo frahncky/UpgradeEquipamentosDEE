@@ -17,10 +17,10 @@ Repositório de modelos institucionais em LaTeX para organizar a prospecção, f
 
 ### Modelos personalizados por empresa
 
-A pasta `empresas/` contém um modelo-base compartilhado e **30 ofícios LaTeX personalizados**, organizados por prioridade:
+A pasta `empresas/` contém um modelo-base compartilhado e **31 ofícios LaTeX personalizados**, organizados por prioridade:
 
 - **P1 — Máxima:** Schneider Electric, Vale, Eneva, Equatorial Energia, WEG, Rockwell Automation, Siemens, Altus, Intelbras e Petrobras;
-- **P2 — Alta:** Festo, SMC, ABB, Alcoa/Alumar, Suzano, Hitachi Energy, Eaton, Phoenix Contact, Emerson e Fluke;
+- **P2 — Alta:** Festo, SMC, ABB, Alcoa/Alumar, Suzano, Hitachi Energy, Eaton, Phoenix Contact, Emerson, Fluke e FNIRSI;
 - **P3 — Oportunidade:** Keysight, Tektronix/Keithley, National Instruments, Yaskawa, Mitsubishi Electric, Bosch Rexroth, Cisco, Huawei, Dell Technologies e Lenovo.
 
 Cada arquivo de empresa já contém área de atuação, setor recomendado para prospecção, estratégia, proposta de cooperação, equipamentos/quantidades sugeridos e canal institucional oficial.
@@ -42,6 +42,6 @@ Cada arquivo de empresa já contém área de atuação, setor recomendado para p
 
 Os modelos institucionais utilizam `modelos/preambulo.tex`. Os documentos da pasta `empresas/` carregam `empresas/base_empresa.tex`, que centraliza o texto e a diagramação comum.
 
-Para gerar um ofício personalizado no Overleaf, selecione o arquivo `.tex` da empresa desejada como documento principal. Antes da emissão, preencha os campos de número/data do ofício, e-mail e telefone institucional e revise as quantidades solicitadas.
+Para gerar um ofício personalizado no Overleaf, selecione o arquivo `.tex` da empresa desejada como documento principal. Antes da emissão, preencha os campos de número/data do ofício e revise as quantidades solicitadas. Os dados de contato do Chefe do DEE já estão incorporados ao modelo-base.
 
 > **Observação:** os documentos são minutas de apoio administrativo. A formalização final deve observar as normas vigentes do IFMA e da Administração Pública Federal, bem como a análise dos setores competentes.
