@@ -31,12 +31,17 @@ Documentos institucionais em LaTeX:
 - `cenario_maranhao.tex` - contexto econômico, industrial, logístico e energético do Maranhão;
 - `fontes_cenario_maranhao.md` - fontes oficiais dos indicadores regionais;
 - `fluxo_laboratorios.tex` - fluxo em blocos da estrutura laboratorial.
+- `03_resumo_executivo.tex` - síntese de uma página para apresentação inicial a gestores e empresas;
+- `03_plano_sustentabilidade.md` - governança, segurança, manutenção, capacitação e monitoramento dos recursos.
 
 O dossiê é apresentado **sem fotografias**: a infraestrutura é descrita pelo fluxo em blocos.
 
 ### `laboratorios/`
 - matriz Laboratório x Empresa x Equipamento;
 - plano de modernização por eixo, com níveis Ideal/Intermediário/Mínimo.
+- prioridades propostas por etapa, sem valores financeiros inventados;
+- cadastro nominal dos laboratórios com pendências de conferência identificadas;
+- base para levantamento de indicadores acadêmicos, operacionais e de resultados.
 
 ### `prospeccao/`
 - ranking das 60 empresas;
@@ -44,11 +49,12 @@ O dossiê é apresentado **sem fotografias**: a infraestrutura é descrita pelo 
 - CRM de acompanhamento;
 - calendário de follow-up;
 - pacote padrão de envio;
+- composição dos pacotes direcionados às empresas prioritárias;
 - modelos de e-mail;
 - fontes de priorização.
 
 ### `anexos/`
-Anexos técnicos das 60 empresas, todos com três níveis de solicitação (Ideal/Intermediário/Mínimo). O arquivo tem o mesmo nome do ofício correspondente.
+Anexos técnicos das 36 empresas das Ondas 1 e 2, todos com três níveis de solicitação (Ideal/Intermediário/Mínimo). O arquivo tem o mesmo nome do ofício correspondente.
 
 ## Top 10 - primeira onda
 1. Schneider Electric
@@ -77,7 +83,7 @@ make verificar    # confere a coerência entre a base de contatos e as planilhas
 make clean
 ```
 
-A compilação e a verificação também rodam no CI (`.github/workflows/documentos.yml`) a cada pull request: um job compila os 69 documentos e publica os PDFs, outro roda a conferência de coerência.
+A compilação e a verificação também rodam no CI (`.github/workflows/documentos.yml`) a cada pull request: um job compila os 70 documentos e publica os PDFs, outro roda a conferência de coerência.
 
 Sem `make`, compile um documento individualmente (duas passagens, por causa do sumário e do `\pageref{LastPage}`):
 
