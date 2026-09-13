@@ -1,86 +1,223 @@
 \documentclass[12pt,a4paper]{article}
 \input{modelos/preambulo.tex}
-\usepackage{longtable}
-\begin{document}
-\cabecalhoInstitucional
 
+% Ajustes visuais locais do dossiê.
+\titleformat{\section}{\normalsize\sffamily\bfseries\color{azulpetroleo}}{}{0pt}{}[\vspace{-0.35em}{\color{ambar!80}\titlerule[0.6pt]}]
+\titlespacing*{\section}{0pt}{1.0em}{0.6em}
+\fancyhead[L]{\footnotesize\sffamily\color{cinzamedio} IFMA · Campus São Luís/Monte Castelo}
+\fancyhead[R]{\footnotesize\sffamily\color{cinzamedio} Programa de Modernização Tecnológica do DEE}
+\renewcommand{\cabecalhoInstitucional}{%
+\thispagestyle{primeira}%
 \begin{center}
-{\LARGE\bfseries\color{azulpetroleo} Dossiê Institucional do Departamento de Eletroeletrônica}\\[2mm]
-{\large Programa de Modernização Tecnológica dos Laboratórios do DEE}\\[1mm]
-{\small IFMA -- Campus São Luís/Monte Castelo}
+  \marcaIFMA\\[4.0mm]
+  {\sffamily\fontsize{9.2}{10.4}\selectfont\bfseries\color{cinzaescuro} CAMPUS SÃO LUÍS — MONTE CASTELO}\\[1.0mm]
+  {\sffamily\fontsize{8.3}{9.5}\selectfont\color{cinzamedio} DEPARTAMENTO DE ELETROELETRÔNICA — DEE}\\[3.1mm]
+  {\color{ambar!85}\rule{0.62\textwidth}{0.8pt}}
+\end{center}
+\vspace{3.5mm}
+}
+
+\newtcolorbox{cardbox}[1][]{
+  colback=white,
+  colframe=azulpetroleo!35,
+  boxrule=0.55pt,
+  arc=1.4mm,
+  left=3mm,right=3mm,top=2.6mm,bottom=2.6mm,
+  #1
+}
+
+\newcommand{\conteudoitem}[3]{%
+\begin{tcolorbox}[colback=cinzaclaro,colframe=white,boxrule=0pt,arc=1mm,left=2.5mm,right=2.5mm,top=2mm,bottom=2mm]
+{\sffamily\Large\bfseries\color{azulpetroleo} #1}\hspace{2mm}%
+{\sffamily\bfseries\hyperref[#2]{#3}}
+\end{tcolorbox}}
+
+\begin{document}
+
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{center}
+\marcaIFMA\\[7mm]
+{\sffamily\fontsize{10}{12}\selectfont\bfseries\color{cinzaescuro} CAMPUS SÃO LUÍS — MONTE CASTELO}\\[1mm]
+{\sffamily\fontsize{9}{11}\selectfont\color{cinzamedio} DEPARTAMENTO DE ELETROELETRÔNICA — DEE}\\[9mm]
+
+{\color{ambar!90}\rule{0.72\textwidth}{1pt}}\\[8mm]
+
+{\sffamily\fontsize{24}{28}\selectfont\bfseries\color{azulpetroleo}
+Dossiê Institucional do Departamento de Eletroeletrônica}\\[4mm]
+
+{\sffamily\fontsize{16}{19}\selectfont\color{cinzaescuro}
+Programa de Modernização Tecnológica dos Laboratórios do DEE}\\[2mm]
+
+{\sffamily\large\color{cinzamedio}
+Doações, cooperação técnica e projetos de P\&D}\\[8mm]
+
+\begin{tcolorbox}[
+  width=0.86\textwidth,
+  colback=azulpetroleo!5,
+  colframe=azulpetroleo!35,
+  boxrule=0.6pt,
+  arc=1.6mm,
+  left=4mm,right=4mm,top=3mm,bottom=3mm
+]
+\centering
+\textbf{Objetivo:} apresentar a capacidade técnica do DEE, o contexto estratégico do Maranhão e as oportunidades de apoio para modernização laboratorial, formação profissional, pesquisa aplicada e desenvolvimento tecnológico.
+\end{tcolorbox}
 \end{center}
 
-\tableofcontents
+\vfill
+
+\noindent\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}X >{\RaggedRight\arraybackslash}X >{\RaggedRight\arraybackslash}X}
+\begin{cardbox}
+\textbf{Abrangência acadêmica}\\
+Cursos técnicos, Engenharia Elétrica, iniciação científica, TCCs, monografias e pós-graduação.
+\end{cardbox}
+&
+\begin{cardbox}
+\textbf{Abrangência tecnológica}\\
+Automação, eletrônica, telecomunicações, eletrotécnica, sistemas de energia e instrumentação.
+\end{cardbox}
+&
+\begin{cardbox}
+\textbf{Abrangência institucional}\\
+Parcerias com empresas, ensaios, prototipagem, capacitação e projetos conjuntos de P\&D.
+\end{cardbox}
+\end{tabularx}
+
+\vspace{8mm}
+\begin{center}
+{\small\color{cinzamedio}São Luís — MA \textbullet\ 2026}
+\end{center}
+\end{titlepage}
+
+\cabecalhoInstitucional
+
+\section*{Conteúdo}
+\begin{tabularx}{\textwidth}{X X}
+\conteudoitem{01}{sec:apresentacao}{Apresentação}
+&
+\conteudoitem{02}{sec:areas}{Áreas de atuação}\\[-1mm]
+\conteudoitem{03}{sec:corpo}{Corpo docente}
+&
+\conteudoitem{04}{sec:cenario}{Cenário do Maranhão}\\[-1mm]
+\conteudoitem{05}{sec:formacao}{Formação, pesquisa e P\&D}
+&
+\conteudoitem{06}{sec:estrutura}{Estrutura laboratorial}\\[-1mm]
+\conteudoitem{07}{sec:integracao}{Integração dos laboratórios}
+&
+\conteudoitem{08}{sec:parcerias}{Possibilidades de parceria}\\[-1mm]
+\conteudoitem{09}{sec:resultados}{Resultados esperados}
+&
+\conteudoitem{10}{sec:contato}{Contato}
+\end{tabularx}
+
 \newpage
 
-\section{Apresentação}
+\section{Apresentação}\label{sec:apresentacao}
 O Departamento de Eletroeletrônica -- DEE do IFMA -- Campus São Luís/Monte Castelo atua na formação técnica e superior nas áreas de Eletrotécnica, Eletrônica, Automação e Engenharia Elétrica. Suas atividades envolvem ensino, pesquisa, extensão, iniciação científica, trabalhos de conclusão de curso, orientação acadêmica e capacitação técnica.
 
-A modernização dos laboratórios busca aproximar ainda mais a formação acadêmica das tecnologias utilizadas pela indústria, pelo setor elétrico, por integradores de automação, empresas de telecomunicações e centros de pesquisa. A atualização dessa infraestrutura amplia as possibilidades de aulas práticas, pesquisa aplicada e desenvolvimento de projetos em parceria com o setor produtivo.
+A modernização dos laboratórios busca aproximar ainda mais a formação acadêmica das tecnologias utilizadas pela indústria, pelo setor elétrico, por integradores de automação, por empresas de telecomunicações e por centros de pesquisa. A atualização dessa infraestrutura amplia as possibilidades de aulas práticas, pesquisa aplicada e desenvolvimento de projetos em parceria com o setor produtivo.
 
-\section{Áreas de atuação}
-O trabalho do Departamento está organizado em quatro grandes áreas:
-\begin{enumerate}[leftmargin=*]
-\item \textbf{Automação}: CLPs, IHMs, controle, instrumentação, redes industriais, sensores, robótica, IoT e Indústria 4.0;
-\item \textbf{Eletrônica e Telecomunicações}: eletrônica analógica e digital, sistemas embarcados, instrumentação eletrônica, RF, redes, telecomunicações e prototipagem;
-\item \textbf{Eletrotécnica}: instalações elétricas, medidas, máquinas, comandos, acionamentos, manutenção e qualidade da energia;
-\item \textbf{Sistemas de Energia}: geração, transmissão, distribuição, proteção, subestações, smart grid, geração distribuída e análise de sistemas elétricos.
-\end{enumerate}
+\section{Áreas de atuação}\label{sec:areas}
+\begin{tabularx}{\textwidth}{X X}
+\begin{cardbox}
+{\sffamily\bfseries\color{azulpetroleo} Automação}\\[0.8mm]
+CLPs, IHMs, controle, instrumentação, redes industriais, sensores, robótica, IoT e Indústria 4.0.
+\end{cardbox}
+&
+\begin{cardbox}
+{\sffamily\bfseries\color{azulpetroleo} Eletrônica e Telecomunicações}\\[0.8mm]
+Eletrônica analógica e digital, sistemas embarcados, RF, redes, telecomunicações e prototipagem.
+\end{cardbox}
+\\[-1mm]
+\begin{cardbox}
+{\sffamily\bfseries\color{azulpetroleo} Eletrotécnica}\\[0.8mm]
+Instalações elétricas, medidas, máquinas, comandos, acionamentos, manutenção e qualidade da energia.
+\end{cardbox}
+&
+\begin{cardbox}
+{\sffamily\bfseries\color{azulpetroleo} Sistemas de Energia}\\[0.8mm]
+Geração, transmissão, distribuição, proteção, subestações, smart grid, geração distribuída e análise de sistemas elétricos.
+\end{cardbox}
+\end{tabularx}
 
 \input{dossie/corpo_docente.tex}
 
 \input{dossie/cenario_maranhao.tex}
 
-\section{Formação profissional, pesquisa e P\&D}
+\section{Formação profissional, pesquisa e P\&D}\label{sec:formacao}
 Os laboratórios atendem os cursos técnicos de Eletrotécnica, Eletrônica e Automação e o curso de Engenharia Elétrica. Também são utilizados em iniciação científica, TCCs, monografias e pesquisas vinculadas a mestrado e doutorado, inclusive em cooperação com outras instituições.
 
 Com equipamentos atuais, os estudantes podem trabalhar com tecnologias próximas das encontradas no ambiente profissional, desenvolvendo experiência em configuração, operação, ensaio, medição, diagnóstico, supervisão e manutenção de sistemas reais. Isso contribui para uma formação mais sólida e prepara profissionais capazes de atuar com segurança e domínio técnico.
 
 O DEE também está disponível para desenvolver, em conjunto com empresas e instituições parceiras, projetos de \textbf{Pesquisa e Desenvolvimento (P\&D)}, pesquisa aplicada, provas de conceito, protótipos, ensaios, medições e validações tecnológicas em áreas relacionadas às competências do Departamento.
 
-\section{Estrutura laboratorial}
+\section{Estrutura laboratorial}\label{sec:estrutura}
 A modernização contempla diferentes ambientes e tecnologias, permitindo que o apoio de cada parceiro seja direcionado às áreas em que sua atuação tenha maior aderência.
 
-\begin{longtable}{p{0.31\textwidth} p{0.61\textwidth}}
-\toprule
-\textbf{Eixo/Laboratório} & \textbf{Tecnologias prioritárias}\\
-\midrule
-\endhead
-Automação Industrial & CLPs, IHMs, I/O remoto, SCADA, redes industriais, fontes e sensores\\
-Eletrônica e Sistemas Digitais & Osciloscópios, fontes, geradores, DMMs, LCR, analisadores lógicos e kits embarcados\\
-Telecomunicações/RF & Analisadores de espectro, VNA, RF, comunicações móveis, fibra óptica e redes\\
-Máquinas e Acionamentos & Motores, transformadores, inversores, soft-starters, proteção e bancadas de ensaio\\
-Instalações e Medidas & Proteção BT, instrumentos de medição, megômetros, analisadores e segurança elétrica\\
-Qualidade de Energia & Analisadores de potência, registradores, harmônicos e monitoramento\\
-Proteção e Sistemas de Energia & Relés, IEDs, RTAC, IEC 61850, TC/TP, testes e automação de subestações\\
-Instrumentação Industrial & Pressão, vazão, nível, temperatura, 4--20 mA, válvulas e calibração\\
-Eletrônica de Potência & MOSFET, IGBT, SiC, GaN, drivers, conversores e controle digital\\
-Pneumática/Hidráulica & Bancadas didáticas, válvulas, atuadores, sensores e controle\\
-Computação para Engenharia & Workstations, servidores, monitores, software e aquisição de dados\\
-\bottomrule
-\end{longtable}
+\begin{tabularx}{\textwidth}{X X}
+\begin{cardbox}
+{\sffamily\bfseries\color{azulpetroleo} Automação e Instrumentação}\\[0.8mm]
+CLPs, IHMs, I/O remoto, SCADA, redes industriais, sensores, válvulas, pressão, vazão, nível e temperatura.
+\end{cardbox}
+&
+\begin{cardbox}
+{\sffamily\bfseries\color{azulpetroleo} Eletrônica, Embarcados e Telecom}\\[0.8mm]
+Osciloscópios, fontes, geradores, DMMs, LCR, analisadores lógicos, kits embarcados, RF, fibra óptica e redes.
+\end{cardbox}
+\\[-1mm]
+\begin{cardbox}
+{\sffamily\bfseries\color{azulpetroleo} Eletrotécnica e Acionamentos}\\[0.8mm]
+Motores, transformadores, inversores, soft-starters, proteção BT, megômetros, analisadores e segurança elétrica.
+\end{cardbox}
+&
+\begin{cardbox}
+{\sffamily\bfseries\color{azulpetroleo} Sistemas de Energia}\\[0.8mm]
+Relés, IEDs, RTAC, IEC 61850, TC/TP, qualidade de energia, geração distribuída e automação de subestações.
+\end{cardbox}
+\\[-1mm]
+\begin{cardbox}
+{\sffamily\bfseries\color{azulpetroleo} Eletrônica de Potência}\\[0.8mm]
+MOSFET, IGBT, SiC, GaN, drivers, conversores e controle digital.
+\end{cardbox}
+&
+\begin{cardbox}
+{\sffamily\bfseries\color{azulpetroleo} Infraestrutura transversal}\\[0.8mm]
+Bancadas didáticas, workstations, servidores, monitores, software, aquisição de dados e apoio à prototipagem.
+\end{cardbox}
+\end{tabularx}
 
-\section{Integração dos laboratórios}
+\section{Integração dos laboratórios}\label{sec:integracao}
 \input{dossie/fluxo_laboratorios.tex}
 
 Os ambientes são utilizados de forma compartilhada. Um mesmo equipamento pode atender diferentes disciplinas, cursos e projetos, além de apoiar pesquisas e atividades de desenvolvimento tecnológico.
 
-\section{Possibilidades de parceria}
+\section{Possibilidades de parceria}\label{sec:parcerias}
 O apoio pode ocorrer por meio de doação de equipamentos, kits didáticos, unidades de demonstração, softwares, licenças, treinamento, modernização de bancadas ou cooperação técnica. Também são de interesse equipamentos descontinuados comercialmente, desde que estejam em boas condições de funcionamento e possam ser utilizados com segurança em atividades acadêmicas.
 
 A parceria pode ainda envolver workshops, capacitações, estudos de caso, TCCs, dissertações, teses e projetos de P\&D relacionados às tecnologias da empresa. O DEE pode acompanhar a utilização dos recursos recebidos e apresentar resultados acadêmicos e técnicos decorrentes da cooperação.
 
-\section{Resultados esperados}
+\section{Resultados esperados}\label{sec:resultados}
 A modernização dos laboratórios deve ampliar a qualidade das atividades práticas, fortalecer a pesquisa aplicada e aumentar o contato dos estudantes com tecnologias utilizadas no setor produtivo. Espera-se também ampliar a capacidade do Departamento para desenvolver projetos com empresas, apoiar pesquisas de pós-graduação e contribuir para a formação de profissionais mais preparados para atuar nas áreas de eletroeletrônica.
 
 Toda parceria ou doação será formalizada pelos setores competentes do IFMA, de acordo com os procedimentos institucionais aplicáveis.
 
-\section{Contato}
+\section{Contato}\label{sec:contato}
+\begin{tcolorbox}[
+  colback=azulpetroleo!5,
+  colframe=azulpetroleo!35,
+  boxrule=0.6pt,
+  arc=1.6mm,
+  left=4mm,right=4mm,top=3mm,bottom=3mm
+]
 \textbf{Francisco dos Santos Viana}\\
 Chefe do Departamento de Eletroeletrônica -- DEE\\
 IFMA -- Campus São Luís/Monte Castelo\\
-\href{mailto:francisco.viana@ifma.edu.br}{francisco.viana@ifma.edu.br}\\
-(98) 98816-6263
+\href{mailto:francisco.viana@ifma.edu.br}{francisco.viana@ifma.edu.br} \quad | \quad (98) 98816-6263
+
+\vspace{1.5mm}
+\textbf{O DEE permanece à disposição para apresentar seus laboratórios, detalhar demandas e construir propostas de cooperação técnica, doação de equipamentos e projetos de pesquisa e desenvolvimento.}
+\end{tcolorbox}
 
 \vfill
 \begin{center}
