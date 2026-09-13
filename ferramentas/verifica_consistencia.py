@@ -59,11 +59,21 @@ def conferir_colunas(caminho: Path) -> None:
 
 
 def main() -> int:
-    registros = {m["chave"]: m for m in (m.groupdict() for m in REGISTRO.finditer(BASE.read_text(encoding="utf-8")))}
-    if not registros:
+    blocos = [m.groupdict() for m in REGISTRO.finditer(BASE.read_text(encoding="utf-8"))]
+    if not blocos:
         falha(f"{BASE.relative_to(RAIZ)}: nenhum registro \\ContatoEmpresa reconhecido")
         print("\n".join(falhas), file=sys.stderr)
         return 1
+
+    # Chave repetida — de um merge que reintroduz um registro, por exemplo — não
+    # pode virar só a última ocorrência: o LaTeX acrescenta as duas à lista e o
+    # diretório sai com a empresa duplicada e o resumo por prioridade inflado.
+    registros: dict[str, dict] = {}
+    for bloco in blocos:
+        chave = bloco["chave"]
+        if chave in registros:
+            falha(f"{BASE.relative_to(RAIZ)}: chave '{chave}' cadastrada mais de uma vez")
+        registros[chave] = bloco
 
     for chave, reg in registros.items():
         if reg["nivel"] not in NIVEIS:
