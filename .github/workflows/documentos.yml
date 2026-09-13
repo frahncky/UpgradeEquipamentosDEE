@@ -1,0 +1,50 @@
+name: Documentos
+
+# O modo de falha deste repositório é silencioso: um documento pode compilar
+# perfeitamente e ainda assim sair com o dado errado, e uma planilha pode
+# divergir da base de contatos sem que nada acuse. Por isso o CI faz as duas
+# coisas: confere a coerência dos dados e compila os 69 documentos.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  consistencia:
+    name: Coerência da base e das planilhas
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Conferir base, ranking e CRM
+        run: python3 ferramentas/verifica_consistencia.py
+
+  compilacao:
+    name: Compilação dos documentos
+    runs-on: ubuntu-latest
+    container: texlive/texlive:latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # A imagem do TeX Live nem sempre traz o make.
+      - name: Garantir o make
+        run: command -v make || (apt-get update && apt-get install -y --no-install-recommends make)
+
+      # -halt-on-error no Makefile faz a compilação parar no primeiro erro.
+      - name: Compilar os 69 documentos
+        run: make
+
+      - name: Conferir se todos os PDFs saíram
+        run: |
+          gerados=$(ls build/*.pdf | wc -l)
+          esperados=$(ls modelos/0*.tex empresas/[0-9]*.tex empresas/diretorio_contatos.tex dossie/01_dossie_institucional.tex | wc -l)
+          echo "PDFs gerados: $gerados de $esperados"
+          test "$gerados" -eq "$esperados"
+
+      - name: Publicar os PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: documentos-pdf
+          path: build/*.pdf
+          retention-days: 14

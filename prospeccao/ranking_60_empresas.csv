@@ -1,61 +1,61 @@
-Rank,Empresa,Prioridade atual,Macroárea,Score preliminar,Onda,Justificativa resumida
-1,Schneider Electric,P1,Automação/Energia,96,Onda 1,Programa formal de doação educacional; alta aderência; operação BR
-2,Equatorial Energia,P1,Sistemas de Energia/Smart Grid,95,Onda 1,Presença no MA; aderência direta; canal institucional local
-3,Vale,P1,Multidisciplinar/Indústria,94,Onda 1,Histórico de 16 laboratórios técnicos equipados no MA
-4,SEL,P1,Proteção/Subestações,93,Onda 1,Programa formal de doação universitária; USP entre beneficiárias
-5,WEG,P1,Máquinas/Acionamentos,92,Onda 1,Aderência máxima; histórico de doações e parceria com SENAI
-6,Eneva,P1,Energia/Geração,90,Onda 1,Atuação no MA; investimento em escola técnica e bancadas
-7,Alcoa/Alumar,P2,Indústria/Manutenção/Energia,89,Onda 1,Presença em São Luís; histórico de apoio/doações e educação
-8,Altus,P1,Automação,88,Onda 1,Fabricante nacional; representante MA; soluções didáticas
-9,Intelbras,P1,Redes/IoT/Telecom,87,Onda 1,Estruturação de laboratórios e parcerias com institutos técnicos
-10,Siemens,P1,Automação/Digitalização,86,Onda 1,Histórico forte com SENAI e laboratórios I4.0 no Brasil
-11,Endress+Hauser,P1,Instrumentação,85,Onda 2,Histórico educacional e laboratórios; forte aderência
-12,Hitachi Energy,P2,Proteção/Subestações,84,Onda 2,Cooperação com SENAI em proteção e controle
-13,Festo,P2,Pneumática/Automação,83,Onda 2,Festo Didactic; forte atuação educacional
-14,Rockwell Automation,P1,Automação,82,Onda 2,Universidade/parcerias educacionais; forte aderência
-15,ABB,P2,Automação/Energia,81,Onda 2,Portfólio amplo e presença BR
-16,Suzano,P2,Indústria/Automação/TI,80,Onda 2,Atuação no MA e histórico de investimento educacional
-17,Phoenix Contact,P2,Automação/Conectividade,79,Onda 2,Alta aderência a redes e automação
-18,Eaton,P2,Proteção/Energia,78,Onda 2,Presença BR e atuação educacional
-19,Emerson,P2,Instrumentação/Processo,77,Onda 2,Instrumentação e automação de processo
-20,Fluke,P2,Medição/Manutenção,76,Onda 2,Instrumentação transversal e forte uso acadêmico
-21,Rohde & Schwarz,P1,Telecom/RF,75,Onda 2,Soluções educacionais formais e presença BR
-22,Infineon Technologies,P1,Eletrônica de Potência,74,Onda 2,University Alliance e kits/amostras acadêmicas
-23,Texas Instruments,P1,Eletrônica de Potência,73,Onda 2,Currículo universitário e kits PMLK
-24,OMRON,P2,Automação/Sensores,72,Onda 2,Automação e educação industrial
-25,Beckhoff,P2,Automação/EtherCAT,71,Onda 2,Tecnologia diferenciada para Indústria 4.0
-26,WAGO,P2,Automação/Conectividade,70,Onda 2,I/O; PLC e conectividade industrial
-27,SICK,P2,Sensores/Visão,69,Onda 2,Sensoriamento avançado e segurança
-28,ifm electronic,P2,Sensores/IO-Link,68,Onda 2,Escritório regional em Fortaleza; IO-Link
-29,Balluff,P2,Sensores/RFID,67,Onda 2,Sensores e identificação industrial
-30,Pepperl+Fuchs,P2,Sensores/Instrumentação,66,Onda 2,Sensores e automação de processo
-31,Weidmüller,P2,Conectividade/IIoT,65,Onda 2,Conectividade; fontes; IoT e automação
-32,Delta Electronics,P2,Automação/Acionamentos,64,Onda 2,CLP; HMI; drives e servos
-33,Yokogawa,P2,Instrumentação/Energia,63,Onda 2,DAQ; potência e processo
-34,HIOKI,P2,Medição/Energia,62,Onda 2,Analisadores de potência e medição
-35,Megger,P2,Ensaios/Proteção,61,Onda 2,Ensaios elétricos; isolamento e relés
-36,Minipa,P2,Medição/Eletrônica,60,Onda 2,Fabricante nacional e ampla aplicabilidade
-37,Anritsu,P2,Telecom/RF,59,Onda 3,Instrumentação RF e telecom
-38,VIAVI Solutions,P2,Telecom/Fibra,58,Onda 3,Fibra; redes e telecom
-39,STMicroelectronics,P2,Semicondutores/Embarcados,57,Onda 3,Kits de desenvolvimento e cooperação universitária
-40,onsemi,P2,Semicondutores/Potência,56,Onda 3,Programa STEAM e semicondutores de potência
-41,RIGOL,P2,Instrumentação,55,Onda 3,Soluções educacionais; instrumentação completa
-42,SIGLENT,P2,Instrumentação,54,Onda 3,Histórico universitário; instrumentação completa
-43,SMC,P2,Pneumática/Automação,53,Onda 3,Bancadas e automação pneumática
-44,Keysight,P3,Eletrônica/RF,52,Onda 3,Instrumentação avançada; custo alto
-45,Tektronix/Keithley,P3,Eletrônica/Medição,51,Onda 3,Instrumentação avançada
-46,National Instruments,P3,DAQ/Pesquisa,50,Onda 3,DAQ e LabVIEW; alto valor acadêmico
-47,Yaskawa,P3,Robótica/Drives,49,Onda 3,Robótica e acionamentos
-48,Mitsubishi Electric,P3,Automação/Robótica,48,Onda 3,Automação e robótica
-49,Bosch Rexroth,P3,Hidráulica/Automação,47,Onda 3,Hidráulica e automação
-50,Cisco,P3,Redes/Cibersegurança,46,Onda 3,Networking e academia
-51,Huawei,P3,Telecom/Redes/Energia,45,Onda 3,Telecom e ICT Academy
-52,Dell Technologies,P3,Computação,44,Onda 3,Workstations e servidores
-53,Lenovo,P3,Computação,43,Onda 3,Workstations e desktops
-54,Instrutherm,P3,Instrumentação,42,Onda 3,Instrumentação nacional
-55,Pico Technology,P3,Osciloscopia/DAQ,41,Onda 3,Instrumentação compacta e DAQ
-56,FNIRSI,P2,Instrumentação/Eletrônica,40,Onda 3,Boa aderência; canal internacional/representação
-57,Universal Robots,P2,Robótica,39,Onda 3,Programa educacional; robótica colaborativa
-58,FANUC,P2,Robótica,38,Onda 3,Programa educacional estruturado
-59,KUKA,P2,Robótica,37,Onda 3,Células educacionais; custo elevado
-60,Petrobras,P1,TI/Pesquisa/Energia,36,Onda 3,Chamadas de doação dependem de edital/eligibilidade
+Rank,Empresa,Chave,Prioridade atual,Macroárea,Score preliminar,Onda,Justificativa resumida
+1,Schneider Electric,01_schneider_electric,P1,Automação/Energia,96,Onda 1,Programa formal de doação educacional; alta aderência; operação BR
+2,Equatorial Energia,04_equatorial_energia,P1,Sistemas de Energia/Smart Grid,95,Onda 1,Presença no MA; aderência direta; canal institucional local
+3,Vale,02_vale,P1,Multidisciplinar/Indústria,94,Onda 1,Histórico de 16 laboratórios técnicos equipados no MA
+4,SEL,32_sel,P1,Proteção/Subestações,93,Onda 1,Programa formal de doação universitária; USP entre beneficiárias
+5,WEG,05_weg,P1,Máquinas/Acionamentos,92,Onda 1,Aderência máxima; histórico de doações e parceria com SENAI
+6,Eneva,03_eneva,P1,Energia/Geração,90,Onda 1,Atuação no MA; investimento em escola técnica e bancadas
+7,Alcoa/Alumar,14_alcoa_alumar,P2,Indústria/Manutenção/Energia,89,Onda 1,Presença em São Luís; histórico de apoio/doações e educação
+8,Altus,08_altus,P1,Automação,88,Onda 1,Fabricante nacional; representante MA; soluções didáticas
+9,Intelbras,09_intelbras,P1,Redes/IoT/Telecom,87,Onda 1,Estruturação de laboratórios e parcerias com institutos técnicos
+10,Siemens,07_siemens,P1,Automação/Digitalização,86,Onda 1,Histórico forte com SENAI e laboratórios I4.0 no Brasil
+11,Endress+Hauser,35_endress_hauser,P1,Instrumentação,85,Onda 2,Histórico educacional e laboratórios; forte aderência
+12,Hitachi Energy,16_hitachi_energy,P2,Proteção/Subestações,84,Onda 2,Cooperação com SENAI em proteção e controle
+13,Festo,11_festo,P2,Pneumática/Automação,83,Onda 2,Festo Didactic; forte atuação educacional
+14,Rockwell Automation,06_rockwell_automation,P1,Automação,82,Onda 2,Universidade/parcerias educacionais; forte aderência
+15,ABB,13_abb,P2,Automação/Energia,81,Onda 2,Portfólio amplo e presença BR
+16,Suzano,15_suzano,P2,Indústria/Automação/TI,80,Onda 2,Atuação no MA e histórico de investimento educacional
+17,Phoenix Contact,18_phoenix_contact,P2,Automação/Conectividade,79,Onda 2,Alta aderência a redes e automação
+18,Eaton,17_eaton,P2,Proteção/Energia,78,Onda 2,Presença BR e atuação educacional
+19,Emerson,19_emerson,P2,Instrumentação/Processo,77,Onda 2,Instrumentação e automação de processo
+20,Fluke,20_fluke,P2,Medição/Manutenção,76,Onda 2,Instrumentação transversal e forte uso acadêmico
+21,Rohde & Schwarz,54_rohde_schwarz,P1,Telecom/RF,75,Onda 2,Soluções educacionais formais e presença BR
+22,Infineon Technologies,57_infineon,P1,Eletrônica de Potência,74,Onda 2,University Alliance e kits/amostras acadêmicas
+23,Texas Instruments,59_texas_instruments,P1,Eletrônica de Potência,73,Onda 2,Currículo universitário e kits PMLK
+24,OMRON,39_omron,P2,Automação/Sensores,72,Onda 2,Automação e educação industrial
+25,Beckhoff,40_beckhoff,P2,Automação/EtherCAT,71,Onda 2,Tecnologia diferenciada para Indústria 4.0
+26,WAGO,41_wago,P2,Automação/Conectividade,70,Onda 2,I/O; PLC e conectividade industrial
+27,SICK,42_sick,P2,Sensores/Visão,69,Onda 2,Sensoriamento avançado e segurança
+28,ifm electronic,43_ifm,P2,Sensores/IO-Link,68,Onda 2,Escritório regional em Fortaleza; IO-Link
+29,Balluff,44_balluff,P2,Sensores/RFID,67,Onda 2,Sensores e identificação industrial
+30,Pepperl+Fuchs,45_pepperl_fuchs,P2,Sensores/Instrumentação,66,Onda 2,Sensores e automação de processo
+31,Weidmüller,46_weidmueller,P2,Conectividade/IIoT,65,Onda 2,Conectividade; fontes; IoT e automação
+32,Delta Electronics,47_delta_electronics,P2,Automação/Acionamentos,64,Onda 2,CLP; HMI; drives e servos
+33,Yokogawa,48_yokogawa,P2,Instrumentação/Energia,63,Onda 2,DAQ; potência e processo
+34,HIOKI,49_hioki,P2,Medição/Energia,62,Onda 2,Analisadores de potência e medição
+35,Megger,50_megger,P2,Ensaios/Proteção,61,Onda 2,Ensaios elétricos; isolamento e relés
+36,Minipa,51_minipa,P2,Medição/Eletrônica,60,Onda 2,Fabricante nacional e ampla aplicabilidade
+37,Anritsu,55_anritsu,P2,Telecom/RF,59,Onda 3,Instrumentação RF e telecom
+38,VIAVI Solutions,56_viavi,P2,Telecom/Fibra,58,Onda 3,Fibra; redes e telecom
+39,STMicroelectronics,58_stmicroelectronics,P2,Semicondutores/Embarcados,57,Onda 3,Kits de desenvolvimento e cooperação universitária
+40,onsemi,60_onsemi,P2,Semicondutores/Potência,56,Onda 3,Programa STEAM e semicondutores de potência
+41,RIGOL,33_rigol,P2,Instrumentação,55,Onda 3,Soluções educacionais; instrumentação completa
+42,SIGLENT,34_siglent,P2,Instrumentação,54,Onda 3,Histórico universitário; instrumentação completa
+43,SMC,12_smc,P2,Pneumática/Automação,53,Onda 3,Bancadas e automação pneumática
+44,Keysight,21_keysight,P3,Eletrônica/RF,52,Onda 3,Instrumentação avançada; custo alto
+45,Tektronix/Keithley,22_tektronix_keithley,P3,Eletrônica/Medição,51,Onda 3,Instrumentação avançada
+46,National Instruments,23_national_instruments,P3,DAQ/Pesquisa,50,Onda 3,DAQ e LabVIEW; alto valor acadêmico
+47,Yaskawa,24_yaskawa,P3,Robótica/Drives,49,Onda 3,Robótica e acionamentos
+48,Mitsubishi Electric,25_mitsubishi_electric,P3,Automação/Robótica,48,Onda 3,Automação e robótica
+49,Bosch Rexroth,26_bosch_rexroth,P3,Hidráulica/Automação,47,Onda 3,Hidráulica e automação
+50,Cisco,27_cisco,P3,Redes/Cibersegurança,46,Onda 3,Networking e academia
+51,Huawei,28_huawei,P3,Telecom/Redes/Energia,45,Onda 3,Telecom e ICT Academy
+52,Dell Technologies,29_dell_technologies,P3,Computação,44,Onda 3,Workstations e servidores
+53,Lenovo,30_lenovo,P3,Computação,43,Onda 3,Workstations e desktops
+54,Instrutherm,52_instrutherm,P3,Instrumentação,42,Onda 3,Instrumentação nacional
+55,Pico Technology,53_pico_technology,P3,Osciloscopia/DAQ,41,Onda 3,Instrumentação compacta e DAQ
+56,FNIRSI,31_fnirsi,P2,Instrumentação/Eletrônica,40,Onda 3,Boa aderência; canal internacional/representação
+57,Universal Robots,36_universal_robots,P2,Robótica,39,Onda 3,Programa educacional; robótica colaborativa
+58,FANUC,37_fanuc,P2,Robótica,38,Onda 3,Programa educacional estruturado
+59,KUKA,38_kuka,P2,Robótica,37,Onda 3,Células educacionais; custo elevado
+60,Petrobras,10_petrobras,P1,TI/Pesquisa/Energia,36,Onda 3,Chamadas de doação dependem de edital/eligibilidade

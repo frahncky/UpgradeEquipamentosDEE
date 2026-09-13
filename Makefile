@@ -8,6 +8,7 @@
 #   make dossie     somente o dossiê institucional
 #   make modelos    somente os documentos institucionais de modelos/
 #   make diretorio  somente o diretório interno de contatos
+#   make verificar  confere a coerência entre a base de contatos e as planilhas
 #   make clean      remove build/
 
 LATEX      := pdflatex
@@ -22,8 +23,11 @@ DIRETORIO := empresas/diretorio_contatos.tex
 SOURCES := $(MODELOS) $(OFICIOS) $(DOSSIE) $(DIRETORIO)
 PDFS    := $(patsubst %.tex,$(BUILD)/%.pdf,$(notdir $(SOURCES)))
 
-.PHONY: all oficios dossie modelos diretorio clean
+.PHONY: all oficios dossie modelos diretorio verificar clean
 all: $(PDFS)
+
+verificar:
+	@python3 ferramentas/verifica_consistencia.py
 
 oficios:   $(patsubst %.tex,$(BUILD)/%.pdf,$(notdir $(OFICIOS)))
 dossie:    $(patsubst %.tex,$(BUILD)/%.pdf,$(notdir $(DOSSIE)))
