@@ -1,19 +1,19 @@
-% Fluxo visual simplificado da estrutura laboratorial do DEE.
+% Fluxo visual da integração entre as áreas, os laboratórios e seus usos.
 
 \begin{center}
-\resizebox{0.94\textwidth}{!}{%
 \begin{tikzpicture}[
   >=stealth,
-  bloco/.style={
-    draw=azulpetroleo!80,
+  area/.style={
+    draw=azulpetroleo!75,
     fill=cinzaclaro,
     thick,
-    rounded corners=2mm,
+    rounded corners=1.6mm,
     align=left,
-    text width=6.1cm,
-    minimum height=3.1cm,
-    inner sep=4mm,
-    font=\small
+    text width=3.15cm,
+    minimum height=4.15cm,
+    inner sep=3mm,
+    execute at begin node={\hyphenpenalty=10000\exhyphenpenalty=10000},
+    font=\footnotesize
   },
   centro/.style={
     draw=azulpetroleo,
@@ -21,66 +21,74 @@
     very thick,
     rounded corners=2mm,
     align=center,
-    text width=4.8cm,
-    minimum height=1.4cm,
+    text width=8.3cm,
+    minimum height=1.35cm,
     inner sep=3mm,
     font=\sffamily\bfseries
   },
-  uso/.style={
+  destino/.style={
     draw=ambar!85!black,
     fill=ambar!10,
     thick,
     rounded corners=2mm,
     align=center,
-    text width=15.6cm,
-    minimum height=1.5cm,
-    inner sep=3.5mm,
+    text width=13.7cm,
+    minimum height=1.7cm,
+    inner sep=3.2mm,
+    execute at begin node={\hyphenpenalty=10000\exhyphenpenalty=10000},
     font=\footnotesize
   },
-  seta/.style={->,thick,color=azulpetroleo!75}
+  seta/.style={->,thick,color=azulpetroleo!75},
+  barramento/.style={thick,color=azulpetroleo!75}
 ]
 
-\node[centro] (dee) at (0,0) {DEPARTAMENTO DE ELETROELETRÔNICA\\[-0.3mm]
-\normalfont\footnotesize Programa de Modernização Tecnológica};
+\node[centro] (dee) at (0,0) {DEPARTAMENTO DE ELETROELETRÔNICA -- DEE\\[-0.2mm]
+\normalfont\footnotesize Áreas e laboratórios integrados};
 
-\node[bloco] (auto) at (-4.5,-3.8) {
+\node[area] (auto) at (-6.0,-4.1) {
 \centering\sffamily\bfseries AUTOMAÇÃO\par\vspace{1.5mm}
 \raggedright\normalfont
-$\bullet$ CLPs, IHMs e supervisão\\
+$\bullet$ Instrumentação e controle\\
 $\bullet$ Redes industriais e IoT\\
-$\bullet$ Robótica e instrumentação};
+$\bullet$ Robótica};
 
-\node[bloco] (eletronica) at (4.5,-3.8) {
-\centering\sffamily\bfseries ELETRÔNICA E TELECOMUNICAÇÕES\par\vspace{1.5mm}
+\node[area] (eletronica) at (-2.0,-4.1) {
+\centering\sffamily\bfseries ELETRÔNICA E TELECOM\par\vspace{1.5mm}
 \raggedright\normalfont
-$\bullet$ Analógica, digital e embarcados\\
-$\bullet$ RF, redes e telecom\\
-$\bullet$ Eletrônica de potência};
+$\bullet$ Circuitos analógicos e digitais\\
+$\bullet$ Sistemas embarcados\\
+$\bullet$ RF, redes e telecom};
 
-\node[bloco] (eletrotecnica) at (-4.5,-8.3) {
+\node[area] (eletrotecnica) at (2.0,-4.1) {
 \centering\sffamily\bfseries ELETROTÉCNICA\par\vspace{1.5mm}
 \raggedright\normalfont
-$\bullet$ Instalações e medidas elétricas\\
-$\bullet$ Máquinas, comandos e acionamentos\\
-$\bullet$ Qualidade da energia};
+$\bullet$ Instalações e medidas\\
+$\bullet$ Máquinas e comandos\\
+$\bullet$ Acionamentos e qualidade de energia};
 
-\node[bloco] (sep) at (4.5,-8.3) {
+\node[area] (sep) at (6.0,-4.1) {
 \centering\sffamily\bfseries SISTEMAS DE ENERGIA\par\vspace{1.5mm}
 \raggedright\normalfont
 $\bullet$ Proteção e subestações\\
 $\bullet$ Geração, transmissão e distribuição\\
-$\bullet$ Smart grid e monitoramento};
+$\bullet$ Smart grids e monitoramento};
 
-\node[uso] (uso) at (0,-12.3) {\textbf{Uso compartilhado da infraestrutura:} cursos técnicos e Engenharia Elétrica $\bullet$ aulas práticas $\bullet$ iniciação científica $\bullet$ TCCs e monografias $\bullet$ pesquisas de mestrado e doutorado $\bullet$ extensão $\bullet$ capacitação profissional $\bullet$ projetos de P\&D, ensaios, protótipos e validação tecnológica.};
+% Barramentos comuns deixam explícito que as quatro áreas estão no mesmo nível.
+\coordinate (entrada) at (0,-1.55);
+\draw[seta] (dee.south) -- (entrada);
+\draw[barramento] (-6.0,-1.55) -- (6.0,-1.55);
+\foreach \bloco in {auto,eletronica,eletrotecnica,sep}
+  \draw[seta] (\bloco.north |- entrada) -- (\bloco.north);
 
-\draw[seta] (dee.south) -- ++(0,-0.6) -| (auto.north);
-\draw[seta] (dee.south) -- ++(0,-0.6) -| (eletronica.north);
-\draw[seta] (dee.south) -- ++(0,-0.9) -| (eletrotecnica.north);
-\draw[seta] (dee.south) -- ++(0,-0.9) -| (sep.north);
+\coordinate (saida) at (0,-6.75);
+\draw[barramento] (-6.0,-6.75) -- (6.0,-6.75);
+\foreach \bloco in {auto,eletronica,eletrotecnica,sep}
+  \draw[seta] (\bloco.south) -- (\bloco.south |- saida);
 
-\draw[seta] (eletrotecnica.south) -- ++(0,-0.5) -| (uso.west);
-\draw[seta] (sep.south) -- ++(0,-0.5) -| (uso.east);
+\node[destino] (uso) at (0,-8.35) {
+\sffamily\bfseries\color{azulpetroleo} ENSINO \textbullet{} PESQUISA \textbullet{} EXTENSÃO \textbullet{} P\&D\\[0.8mm]
+\normalfont\color{black}Cursos técnicos e Engenharia Elétrica; iniciação científica, TCCs, monografias e pós-graduação; capacitação profissional e projetos com empresas.};
+\draw[seta] (saida) -- (uso.north);
 
-\end{tikzpicture}%
-}
+\end{tikzpicture}
 \end{center}
