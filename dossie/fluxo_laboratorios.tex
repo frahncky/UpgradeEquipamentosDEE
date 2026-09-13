@@ -1,120 +1,85 @@
-% Fluxo em blocos da estrutura laboratorial do DEE.
-% Layout 2x2 com eixo central: o distribuidor "MACROÁREAS" desce por um corredor
-% livre entre as colunas e alimenta as quatro caixas por derivações curtas,
-% sem contornar o desenho e sem sobreposição entre caixas.
+% Fluxo visual simplificado da estrutura laboratorial do DEE.
 
 \begin{center}
-\resizebox{0.96\textwidth}{!}{%
+\resizebox{0.94\textwidth}{!}{%
 \begin{tikzpicture}[
   >=stealth,
-  topo/.style={
-    draw=azulpetroleo,
-    fill=azulpetroleo!9,
-    very thick,
-    rounded corners=2mm,
-    align=center,
-    text width=10.4cm,
-    minimum height=1.20cm,
-    inner sep=3mm,
-    font=\sffamily\bfseries
-  },
-  centro/.style={
-    draw=azulpetroleo!70,
-    fill=white,
-    thick,
-    rounded corners=1.8mm,
-    align=center,
-    text width=3.5cm,
-    minimum height=0.85cm,
-    inner sep=2.5mm,
-    font=\sffamily\bfseries\small
-  },
-  area/.style={
+  bloco/.style={
     draw=azulpetroleo!80,
     fill=cinzaclaro,
     thick,
     rounded corners=2mm,
     align=left,
-    text width=7.0cm,
-    minimum height=4.0cm,
+    text width=6.1cm,
+    minimum height=3.1cm,
     inner sep=4mm,
     font=\small
   },
+  centro/.style={
+    draw=azulpetroleo,
+    fill=azulpetroleo!10,
+    very thick,
+    rounded corners=2mm,
+    align=center,
+    text width=4.8cm,
+    minimum height=1.4cm,
+    inner sep=3mm,
+    font=\sffamily\bfseries
+  },
   uso/.style={
-    draw=ifmaverde!75!black,
-    fill=ifmaverde!6,
+    draw=ambar!85!black,
+    fill=ambar!10,
     thick,
     rounded corners=2mm,
     align=center,
-    text width=15.8cm,
-    minimum height=1.35cm,
+    text width=15.6cm,
+    minimum height=1.5cm,
     inner sep=3.5mm,
     font=\footnotesize
   },
-  eixo/.style={thick,color=azulpetroleo!75},
-  seta/.style={->,thick,color=azulpetroleo!75},
-  no/.style={circle,fill=azulpetroleo!75,inner sep=0pt,minimum size=1.6mm}
+  seta/.style={->,thick,color=azulpetroleo!75}
 ]
 
-% Bloco principal
-\node[topo] (dee) at (0,0) {Departamento de Eletroeletrônica -- DEE\\[-0.2mm]
-\normalfont\footnotesize IFMA -- Campus São Luís/Monte Castelo};
+\node[centro] (dee) at (0,0) {DEPARTAMENTO DE ELETROELETRÔNICA\\[-0.3mm]
+\normalfont\footnotesize Programa de Modernização Tecnológica};
 
-% Nó de distribuição
-\node[centro] (macro) at (0,-1.8) {MACROÁREAS};
-\draw[seta] (dee.south) -- (macro.north);
-
-% Primeira linha (centro em y = -5,0; corredor central livre de 1,4 cm)
-\node[area] (auto) at (-4.6,-5.0) {
-\centering\sffamily\bfseries AUTOMAÇÃO\par\vspace{2mm}
+\node[bloco] (auto) at (-4.5,-3.8) {
+\centering\sffamily\bfseries AUTOMAÇÃO\par\vspace{1.5mm}
 \raggedright\normalfont
-$\bullet$ Automação Industrial\\[0.8mm]
-$\bullet$ Redes Industriais e IoT\\[0.8mm]
-$\bullet$ Robótica\\[0.8mm]
-$\bullet$ Pneumática e Eletropneumática\\[0.8mm]
-$\bullet$ Instrumentação e Sensoriamento};
+$\bullet$ CLPs, IHMs e supervisão\\
+$\bullet$ Redes industriais e IoT\\
+$\bullet$ Robótica e instrumentação};
 
-\node[area] (elet) at (4.6,-5.0) {
-\centering\sffamily\bfseries ELETRÔNICA E TELECOMUNICAÇÕES\par\vspace{2mm}
+\node[bloco] (eletronica) at (4.5,-3.8) {
+\centering\sffamily\bfseries ELETRÔNICA E TELECOMUNICAÇÕES\par\vspace{1.5mm}
 \raggedright\normalfont
-$\bullet$ Eletrônica Analógica e Digital\\[0.8mm]
-$\bullet$ Sistemas Digitais e Embarcados\\[0.8mm]
-$\bullet$ Telecomunicações, RF e Redes\\[0.8mm]
-$\bullet$ Instrumentação Eletrônica\\[0.8mm]
-$\bullet$ Eletrônica de Potência};
+$\bullet$ Analógica, digital e embarcados\\
+$\bullet$ RF, redes e telecom\\
+$\bullet$ Eletrônica de potência};
 
-% Segunda linha (centro em y = -10,2; 1,2 cm de folga para a primeira linha)
-\node[area] (eletrot) at (-4.6,-10.2) {
-\centering\sffamily\bfseries ELETROTÉCNICA\par\vspace{2mm}
+\node[bloco] (eletrotecnica) at (-4.5,-8.3) {
+\centering\sffamily\bfseries ELETROTÉCNICA\par\vspace{1.5mm}
 \raggedright\normalfont
-$\bullet$ Instalações Elétricas\\[0.8mm]
-$\bullet$ Medidas Elétricas\\[0.8mm]
-$\bullet$ Máquinas Elétricas\\[0.8mm]
-$\bullet$ Comandos Elétricos\\[0.8mm]
-$\bullet$ Acionamentos e Qualidade de Energia};
+$\bullet$ Instalações e medidas elétricas\\
+$\bullet$ Máquinas, comandos e acionamentos\\
+$\bullet$ Qualidade da energia};
 
-\node[area] (sep) at (4.6,-10.2) {
-\centering\sffamily\bfseries SISTEMAS DE ENERGIA\par\vspace{2mm}
+\node[bloco] (sep) at (4.5,-8.3) {
+\centering\sffamily\bfseries SISTEMAS DE ENERGIA\par\vspace{1.5mm}
 \raggedright\normalfont
-$\bullet$ Proteção e Subestações\\[0.8mm]
-$\bullet$ Sistemas Elétricos de Potência\\[0.8mm]
-$\bullet$ Smart Grid\\[0.8mm]
-$\bullet$ Geração Distribuída\\[0.8mm]
-$\bullet$ Análise e Monitoramento de Sistemas};
+$\bullet$ Proteção e subestações\\
+$\bullet$ Geração, transmissão e distribuição\\
+$\bullet$ Smart grid e monitoramento};
 
-% Uso compartilhado
-\node[uso] (uso) at (0,-14.0) {\textbf{Uso compartilhado da infraestrutura:} ensino técnico e superior $\bullet$ aulas práticas $\bullet$ iniciação científica $\bullet$ TCCs e monografias $\bullet$ pesquisas de mestrado e doutorado $\bullet$ extensão $\bullet$ capacitação profissional $\bullet$ projetos de P\&D, prototipagem, ensaios e validação tecnológica.};
+\node[uso] (uso) at (0,-12.3) {\textbf{Uso compartilhado da infraestrutura:} cursos técnicos e Engenharia Elétrica $\bullet$ aulas práticas $\bullet$ iniciação científica $\bullet$ TCCs e monografias $\bullet$ pesquisas de mestrado e doutorado $\bullet$ extensão $\bullet$ capacitação profissional $\bullet$ projetos de P\&D, ensaios, protótipos e validação tecnológica.};
 
-% Eixo central: desce pelo corredor entre as colunas e termina no uso compartilhado.
-\draw[eixo] (macro.south) -- (0,-12.9);
-\draw[->,thick,color=ifmaverde!65!black] (0,-12.9) -- (uso.north);
+\draw[seta] (dee.south) -- ++(0,-0.6) -| (auto.north);
+\draw[seta] (dee.south) -- ++(0,-0.6) -| (eletronica.north);
+\draw[seta] (dee.south) -- ++(0,-0.9) -| (eletrotecnica.north);
+\draw[seta] (dee.south) -- ++(0,-0.9) -| (sep.north);
 
-% Derivações curtas para cada macroárea.
-\foreach \y/\esq/\dir in {-5.0/auto/elet,-10.2/eletrot/sep}{%
-  \node[no] at (0,\y) {};
-  \draw[seta] (0,\y) -- (\esq.east);
-  \draw[seta] (0,\y) -- (\dir.west);
-}
+\draw[seta] (eletrotecnica.south) -- ++(0,-0.5) -| (uso.west);
+\draw[seta] (sep.south) -- ++(0,-0.5) -| (uso.east);
 
 \end{tikzpicture}%
 }
