@@ -17,13 +17,13 @@ Repositório de modelos institucionais em LaTeX para organizar a prospecção, f
 
 ### Modelos personalizados por empresa
 
-A pasta `empresas/` contém um modelo-base compartilhado e **38 ofícios LaTeX personalizados**, organizados por prioridade:
+A pasta `empresas/` contém um modelo-base compartilhado e **53 ofícios LaTeX personalizados**, organizados por prioridade:
 
 - **P1 — Máxima:** Schneider Electric, Vale, Eneva, Equatorial Energia, WEG, Rockwell Automation, Siemens, Altus, Intelbras, Petrobras, Schweitzer Engineering Laboratories (SEL) e Endress+Hauser;
-- **P2 — Alta:** Festo, SMC, ABB, Alcoa/Alumar, Suzano, Hitachi Energy, Eaton, Phoenix Contact, Emerson, Fluke, FNIRSI, RIGOL, SIGLENT, Universal Robots, FANUC e KUKA;
-- **P3 — Oportunidade:** Keysight, Tektronix/Keithley, National Instruments, Yaskawa, Mitsubishi Electric, Bosch Rexroth, Cisco, Huawei, Dell Technologies e Lenovo.
+- **P2 — Alta:** Festo, SMC, ABB, Alcoa/Alumar, Suzano, Hitachi Energy, Eaton, Phoenix Contact, Emerson, Fluke, FNIRSI, RIGOL, SIGLENT, Universal Robots, FANUC, KUKA, OMRON, Beckhoff, WAGO, SICK, ifm electronic, Balluff, Pepperl+Fuchs, Weidmüller, Delta Electronics, Yokogawa, HIOKI, Megger e Minipa;
+- **P3 — Oportunidade:** Keysight, Tektronix/Keithley, National Instruments, Yaskawa, Mitsubishi Electric, Bosch Rexroth, Cisco, Huawei, Dell Technologies, Lenovo, Instrutherm e Pico Technology.
 
-Cada arquivo de empresa já contém área de atuação, setor recomendado para prospecção, estratégia, proposta de cooperação, equipamentos/quantidades sugeridos e canal institucional oficial.
+A classificação indica prioridade de prospecção do DEE. Nem toda empresa possui programa público permanente de doação; quando não há confirmação, o modelo é tratado como prospecção estratégica de parceria, cessão, demonstração, apoio educacional ou eventual doação conforme política da empresa.
 
 ## Fluxo recomendado
 
@@ -42,6 +42,6 @@ Cada arquivo de empresa já contém área de atuação, setor recomendado para p
 
 Os modelos institucionais utilizam `modelos/preambulo.tex`. Os documentos da pasta `empresas/` carregam `empresas/base_empresa.tex`, que centraliza o texto e a diagramação comum.
 
-Para gerar um ofício personalizado no Overleaf, selecione o arquivo `.tex` da empresa desejada como documento principal. Antes da emissão, preencha os campos de número/data do ofício e revise as quantidades solicitadas. Os dados de contato do Chefe do DEE já estão incorporados ao modelo-base.
+Para gerar um ofício personalizado no Overleaf, selecione o arquivo `.tex` da empresa desejada como documento principal, use pdfLaTeX, preencha número/data do ofício e revise as quantidades. Os dados de contato do Chefe do DEE já estão incorporados ao modelo-base.
 
 > **Observação:** os documentos são minutas de apoio administrativo. A formalização final deve observar as normas vigentes do IFMA e da Administração Pública Federal, bem como a análise dos setores competentes.
