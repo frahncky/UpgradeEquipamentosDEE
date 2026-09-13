@@ -66,9 +66,9 @@
 
 % Símbolo IF em vetor, preservando a paleta institucional.
 \newcommand{\ifmasimbolo}{%
-\begin{tikzpicture}[x=0.255cm,y=0.255cm,baseline=(current bounding box.center)]
+\begin{tikzpicture}[x=0.55cm,y=0.55cm,baseline=(current bounding box.center)]
   \tikzset{bloco/.style={fill=ifmaverde,rounded corners=0.045cm}}
-  \fill[ifmavermelho] (0,3.6) circle (0.39);
+  \fill[ifmavermelho] (0,3.2) circle (0.39);
   \foreach \x/\y in {1.2/3.2,2.4/3.2,0/2,1.2/2,0/0.8,1.2/0.8,2.4/0.8,0/-0.4,1.2/-0.4}{%
     \path[bloco] (\x-0.4,\y-0.4) rectangle ++(0.8,0.8);}
 \end{tikzpicture}%
@@ -79,9 +79,9 @@
 \begin{tabular}{@{}c@{\hspace{0.5cm}}l@{}}
   \ifmasimbolo &
   \begin{tabular}{@{}l@{}}
-    {\sffamily\fontsize{12.3}{12.8}\selectfont\bfseries INSTITUTO FEDERAL}\\[-0.8mm]
-    {\sffamily\fontsize{6.1}{6.8}\selectfont DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA}\\[0.1mm]
-    {\sffamily\fontsize{9.1}{9.6}\selectfont Maranhão}
+    {\sffamily\fontsize{14}{12.8}\selectfont\bfseries INSTITUTO FEDERAL}\\[-0.8mm]
+    {\sffamily\fontsize{8}{8}\selectfont DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA}\\[-0.8mm]
+    {\sffamily\fontsize{10}{10}\selectfont Maranhão}
   \end{tabular}
 \end{tabular}%
 }
