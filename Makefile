@@ -30,24 +30,24 @@ dossie:    $(patsubst %.tex,$(BUILD)/%.pdf,$(notdir $(DOSSIE)))
 modelos:   $(patsubst %.tex,$(BUILD)/%.pdf,$(notdir $(MODELOS)))
 diretorio: $(patsubst %.tex,$(BUILD)/%.pdf,$(notdir $(DIRETORIO)))
 
+# Dependências vindas dos próprios documentos: um PDF precisa ser refeito quando
+# muda qualquer arquivo que ele inclua com \input, direta ou indiretamente
+# (o ofício inclui base_empresa.tex, que inclui contatos_brasil.tex, e assim por
+# diante). Listar isso à mão deixa o build servindo PDF desatualizado em silêncio.
+entradas = $(shell sed -n 's/%.*//; s/.*\\input{\([^}]*\)}.*/\1/p' $(1) 2>/dev/null)
+nivel2   = $(foreach f,$(call entradas,$(1)),$(f) $(call entradas,$(f)))
+deps     = $(sort $(foreach f,$(call nivel2,$(1)),$(f) $(call entradas,$(f))))
+
 # Duas passagens: sumário, longtable e \pageref{LastPage} só fecham na segunda.
-define compilar
-	@mkdir -p $(BUILD)
-	@$(LATEX) $(LATEXFLAGS) -output-directory=$(BUILD) $< > /dev/null
-	@$(LATEX) $(LATEXFLAGS) -output-directory=$(BUILD) $< > /dev/null
-	@echo "  PDF  $@"
+define regra
+$(BUILD)/$(notdir $(1:.tex=.pdf)): $(1) $(call deps,$(1))
+	@mkdir -p $$(BUILD)
+	@$$(LATEX) $$(LATEXFLAGS) -output-directory=$$(BUILD) $$< > /dev/null
+	@$$(LATEX) $$(LATEXFLAGS) -output-directory=$$(BUILD) $$< > /dev/null
+	@echo "  PDF  $$@"
 endef
 
-COMUNS := modelos/preambulo.tex
-
-$(BUILD)/%.pdf: modelos/%.tex $(COMUNS)
-	$(compilar)
-
-$(BUILD)/%.pdf: empresas/%.tex empresas/base_empresa.tex empresas/contatos_brasil.tex $(COMUNS)
-	$(compilar)
-
-$(BUILD)/%.pdf: dossie/%.tex dossie/corpo_docente.tex dossie/cenario_maranhao.tex dossie/fluxo_laboratorios.tex $(COMUNS)
-	$(compilar)
+$(foreach s,$(SOURCES),$(eval $(call regra,$(s))))
 
 clean:
 	rm -rf $(BUILD)
