@@ -29,6 +29,8 @@ REGISTRO = re.compile(
     re.M,
 )
 NIVEIS = {"P1", "P2", "P3"}
+# Ondas já em prospecção: cada empresa delas precisa do anexo técnico.
+ONDAS_COM_ANEXO = {"Onda 1", "Onda 2"}
 
 falhas: list[str] = []
 
@@ -128,6 +130,19 @@ def main() -> int:
                 )
 
     conferir_colunas(MATRIZ)
+
+    # Cobertura dos anexos técnicos. O pacote de envio é ofício + dossiê + anexo,
+    # então toda empresa das ondas já em campo precisa do seu. O nome do arquivo
+    # do anexo é o mesmo do ofício, o que torna o par evidente na hora de montar
+    # o pacote — e verificável aqui.
+    anexos = {p.stem for p in (RAIZ / "anexos").glob("[0-9]*.md")}
+    for chave in sorted(anexos - set(registros)):
+        falha(f"anexos/{chave}.md: anexo sem empresa correspondente na base")
+
+    for linha in ler_csv(RANKING):
+        chave, onda = linha.get("Chave"), linha.get("Onda")
+        if onda in ONDAS_COM_ANEXO and chave not in anexos:
+            falha(f"{linha['Empresa']} ({onda}) está sem o anexo técnico anexos/{chave}.md")
 
     if falhas:
         print(f"{len(falhas)} divergência(s):", file=sys.stderr)
