@@ -34,7 +34,7 @@
     rounded corners=1.8mm,
     align=left,
     text width=3.8cm,
-    minimum height=4.0cm,
+    minimum height=4.2cm,
     inner sep=3mm,
     font=\footnotesize
   },
@@ -55,7 +55,6 @@
 \node[topo] (dee) at (0,0) {Departamento de Eletroeletrônica -- DEE\\[-0.3mm]
 \normalfont\footnotesize IFMA -- Campus São Luís/Monte Castelo};
 
-% Quatro macroáreas em uma linha, com distância suficiente entre os blocos.
 \node[area] (auto) at (-7.5,-2.2) {AUTOMAÇÃO};
 \node[area] (elet) at (-2.5,-2.2) {ELETRÔNICA E\\TELECOMUNICAÇÕES};
 \node[area] (eletrot) at (2.5,-2.2) {ELETROTÉCNICA};
@@ -66,29 +65,28 @@
 \draw[seta] (dee.south) -- ++(0,-0.55) -| (eletrot.north);
 \draw[seta] (dee.south) -- ++(0,-0.55) -| (sep.north);
 
-% Conteúdo de cada macroárea em blocos separados.
-\node[conteudo] (autoc) at (-7.5,-5.2) {\textbf{Principais eixos}\\[1.5mm]
+\node[conteudo] (autoc) at (-7.5,-5.25) {\textbf{Principais eixos}\\[1.5mm]
 $\bullet$ Automação Industrial\\[0.8mm]
 $\bullet$ Redes Industriais e IoT\\[0.8mm]
 $\bullet$ Robótica\\[0.8mm]
 $\bullet$ Pneumática e Eletropneumática\\[0.8mm]
 $\bullet$ Instrumentação e Sensoriamento};
 
-\node[conteudo] (eletc) at (-2.5,-5.2) {\textbf{Principais eixos}\\[1.5mm]
+\node[conteudo] (eletc) at (-2.5,-5.25) {\textbf{Principais eixos}\\[1.5mm]
 $\bullet$ Eletrônica Analógica e Digital\\[0.8mm]
 $\bullet$ Sistemas Digitais e Embarcados\\[0.8mm]
 $\bullet$ Telecomunicações e RF\\[0.8mm]
 $\bullet$ Instrumentação Eletrônica\\[0.8mm]
 $\bullet$ Eletrônica de Potência};
 
-\node[conteudo] (eletrotc) at (2.5,-5.2) {\textbf{Principais eixos}\\[1.5mm]
+\node[conteudo] (eletrotc) at (2.5,-5.25) {\textbf{Principais eixos}\\[1.5mm]
 $\bullet$ Instalações Elétricas\\[0.8mm]
 $\bullet$ Medidas Elétricas\\[0.8mm]
 $\bullet$ Máquinas Elétricas\\[0.8mm]
 $\bullet$ Comandos Elétricos\\[0.8mm]
 $\bullet$ Acionamentos e Qualidade de Energia};
 
-\node[conteudo] (sepc) at (7.5,-5.2) {\textbf{Principais eixos}\\[1.5mm]
+\node[conteudo] (sepc) at (7.5,-5.25) {\textbf{Principais eixos}\\[1.5mm]
 $\bullet$ Proteção e Subestações\\[0.8mm]
 $\bullet$ Sistemas Elétricos de Potência\\[0.8mm]
 $\bullet$ Smart Grid\\[0.8mm]
@@ -100,7 +98,8 @@ $\bullet$ Análise e Monitoramento de Sistemas};
 \draw[seta] (eletrot.south) -- (eletrotc.north);
 \draw[seta] (sep.south) -- (sepc.north);
 
-\node[uso] (uso) at (0,-8.3) {\textbf{Uso compartilhado da infraestrutura:} ensino técnico e superior $\bullet$ aulas práticas $\bullet$ iniciação científica $\bullet$ TCCs e monografias $\bullet$ pesquisas de mestrado e doutorado $\bullet$ extensão $\bullet$ capacitação profissional $\bullet$ projetos de P\&D, prototipagem, ensaios e validação tecnológica.};
+% O bloco final foi afastado das colunas para manter folga visual e impedir sobreposição.
+\node[uso] (uso) at (0,-9.35) {\textbf{Uso compartilhado da infraestrutura:} ensino técnico e superior $\bullet$ aulas práticas $\bullet$ iniciação científica $\bullet$ TCCs e monografias $\bullet$ pesquisas de mestrado e doutorado $\bullet$ extensão $\bullet$ capacitação profissional $\bullet$ projetos de P\&D, prototipagem, ensaios e validação tecnológica.};
 
 \draw[->,thick,color=ifmaverde!65!black] (autoc.south) -- (uso.north -| autoc.south);
 \draw[->,thick,color=ifmaverde!65!black] (eletc.south) -- (uso.north -| eletc.south);
