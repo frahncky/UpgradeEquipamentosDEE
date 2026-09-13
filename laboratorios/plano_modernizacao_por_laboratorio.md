@@ -67,3 +67,31 @@ Este documento apresenta a visão inversa da prospecção: parte da necessidade 
 **Ideal:** 20 workstations com GPU + servidor de alto desempenho.<br>
 **Intermediário:** 10 workstations com GPU.<br>
 **Mínimo:** 5 estações para software de engenharia, sistemas embarcados, inteligência artificial, aprendizado de máquina e pesquisa.
+
+## 11. Robótica Inteligente e Visão Computacional
+**Objetivo:** desenvolver aplicações de robótica colaborativa, percepção, inspeção, identificação e sistemas autônomos.<br>
+**Empresas-chave:** Universal Robots, FANUC, KUKA, Yaskawa, Mitsubishi Electric, OMRON, SICK.<br>
+**Ideal:** 2 células robotizadas com visão e dispositivos de segurança.<br>
+**Intermediário:** 1 cobot com câmera e controlador.<br>
+**Mínimo:** kit de visão computacional, câmera industrial e treinamento.
+
+## 12. Gêmeos Digitais e Simulação
+**Objetivo:** integrar modelos virtuais, dados de processo e sistemas físicos para projeto, comissionamento virtual, diagnóstico e otimização.<br>
+**Empresas-chave:** Siemens, Schneider Electric, Rockwell Automation, Beckhoff, National Instruments, Dell, Lenovo.<br>
+**Ideal:** plataforma completa de simulação e gêmeos digitais com integração às bancadas.<br>
+**Intermediário:** licenças, workstations e uma bancada integrada.<br>
+**Mínimo:** licenças educacionais e capacitação docente.
+
+## 13. Cibersegurança Industrial e de Sistemas Elétricos
+**Objetivo:** criar ambiente isolado para práticas de segmentação, monitoramento, proteção de redes OT e segurança de sistemas de automação e energia.<br>
+**Empresas-chave:** Cisco, Siemens, Rockwell Automation, Schneider Electric, Phoenix Contact, WAGO, Huawei.<br>
+**Ideal:** cyber range OT com switches gerenciáveis, firewalls industriais, servidores e equipamentos de automação.<br>
+**Intermediário:** rede OT segmentada com firewall e ferramentas de monitoramento.<br>
+**Mínimo:** switches, firewall, licenças educacionais e treinamento.
+
+## 14. Transição Energética e Mobilidade Elétrica
+**Objetivo:** apoiar práticas e pesquisas em geração renovável, armazenamento, microredes, carregamento e acionamento de veículos elétricos.<br>
+**Empresas-chave:** WEG, ABB, Schneider Electric, Siemens, Eaton, Huawei, Equatorial Energia.<br>
+**Ideal:** microrrede didática com geração, armazenamento, conversores, cargas e estação de recarga.<br>
+**Intermediário:** sistema fotovoltaico, banco de baterias e conversores didáticos.<br>
+**Mínimo:** kits de geração, armazenamento ou recarga acompanhados de treinamento.
