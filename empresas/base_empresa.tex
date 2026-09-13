@@ -1,8 +1,9 @@
 \begin{document}
 \cabecalhoInstitucional
+\input{empresas/contatos_brasil.tex}
 
-% Os campos \prioridade, \estrategia e \siteOficial permanecem nos arquivos de cada empresa
-% apenas para organização interna. Eles não são impressos no ofício externo.
+% Os campos de prioridade e estratégia permanecem para organização interna.
+% O destinatário e o contato brasileiro são obtidos da base centralizada acima.
 
 \noindent{\sffamily\bfseries OFÍCIO Nº \campo{número/ano} — DEE/MTC/IFMA}
 
@@ -14,7 +15,8 @@ São Luís — MA, \campo{data}.
 \vspace{4mm}
 \noindent À\\
 \textbf{\empresa}\\
-A/C: \setorContato
+\textbf{A/C:} \contatoPrioritario\\[-0.2mm]
+{\footnotesize\color{cinzamedio}\textbf{Contato no Brasil (\statusContatoBrasil):} \contatoBrasil}
 
 \vspace{5mm}
 \noindent\textbf{Assunto:} Solicitação de apoio institucional para modernização dos laboratórios do Departamento de Eletroeletrônica do IFMA.
