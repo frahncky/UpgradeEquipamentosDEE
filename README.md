@@ -21,8 +21,8 @@ Documentos institucionais em LaTeX:
 ### `empresas/`
 - 60 ofícios individualizados;
 - `base_empresa.tex` - corpo comum;
-- `contatos_brasil.tex` - base centralizada com setor prioritário, situação e canal brasileiro das 60 empresas;
-- `diretorio_contatos.tex` - diretório interno, em PDF, de toda a base de contatos (não deve ser enviado às empresas).
+- `contatos_brasil.tex` - fonte única dos dados de prospecção das 60 empresas: prioridade, estratégia, situação, setor prioritário e canal brasileiro;
+- `diretorio_contatos.tex` - diretório interno, em PDF, de toda a base (não deve ser enviado às empresas).
 
 ### `dossie/`
 - `01_dossie_institucional.tex` - dossiê institucional do DEE em LaTeX;
@@ -87,7 +87,7 @@ No Overleaf, selecione o arquivo desejado como **Main document** e use o compila
 
 ## Contatos no Brasil
 
-`empresas/contatos_brasil.tex` centraliza, em um registro por empresa, o setor prioritário, a situação do contato e o canal brasileiro das 60 empresas. Cada ofício seleciona automaticamente o registro correspondente ao seu nome de arquivo e endereça o documento ao setor prioritário cadastrado; a situação e o canal completo, por serem informação de trabalho, aparecem apenas no diretório interno (`empresas/diretorio_contatos.tex`).
+`empresas/contatos_brasil.tex` centraliza, em um registro por empresa, a prioridade, a estratégia de abordagem, o setor prioritário, a situação do contato e o canal brasileiro das 60 empresas. Cada ofício seleciona automaticamente o registro correspondente ao seu nome de arquivo e endereça o documento ao setor prioritário cadastrado; os demais campos, por serem informação de trabalho, aparecem apenas no diretório interno (`empresas/diretorio_contatos.tex`).
 
 A base foi verificada em **13/09/2026** e deve ser conferida novamente imediatamente antes de cada envio.
 

@@ -1,6 +1,7 @@
-% Diretório interno de contatos — DEE/IFMA
+% Diretório interno de prospecção — DEE/IFMA
 % Documento de trabalho: reúne, em um único PDF, os 60 registros de
-% empresas/contatos_brasil.tex (situação, setor prioritário e canal no Brasil).
+% empresas/contatos_brasil.tex (prioridade, estratégia, situação, setor
+% prioritário e canal no Brasil).
 %
 % ATENÇÃO: uso interno. Este documento NÃO deve ser enviado às empresas;
 % ele contém orientações de expedição e observações de trabalho do DEE.
@@ -14,42 +15,72 @@
 \input{empresas/contatos_brasil.tex}
 
 \newcounter{contatoNum}
+\newcounter{prioP1}
+\newcounter{prioP2}
+\newcounter{prioP3}
+
+% Selo do nível de prioridade, com cor por faixa.
+\newcommand{\seloPrioridade}[1]{%
+  \ifcsdef{prioridade@cor@#1}{\color{\csuse{prioridade@cor@#1}}}{\color{cinzamedio}}%
+  \footnotesize\sffamily\bfseries\rotuloPrioridade{#1}%
+}
+\csdef{prioridade@cor@P1}{ifmavermelho}
+\csdef{prioridade@cor@P2}{ambar}
+\csdef{prioridade@cor@P3}{cinzamedio}
 
 % Uma linha do diretório a partir da chave do registro.
 \newcommand{\linhaContato}[1]{%
   \stepcounter{contatoNum}%
   \thecontatoNum &
   {\bfseries\csuse{contato@#1@empresa}}\par
+  {\seloPrioridade{\csuse{contato@#1@nivel}}}\par
   {\footnotesize\color{cinzamedio}\texttt{\detokenize{#1}} — \csuse{contato@#1@status}} &
   {\bfseries\csuse{contato@#1@setor}}\par
-  \vspace{0.6mm}\csuse{contato@#1@canal}\\
+  \vspace{0.6mm}\csuse{contato@#1@canal}\par
+  \vspace{0.6mm}{\footnotesize\color{cinzaescuro}\textbf{Estratégia:} \csuse{contato@#1@estrategia}}\\
   \addlinespace[1.2mm]
+}
+
+% Totais por prioridade: varredura silenciosa da base, feita antes do texto
+% para que o resumo já saia correto na primeira passagem.
+\newcommand{\contaPrioridade}[1]{\stepcounter{prio\csuse{contato@#1@nivel}}}
+\forlistloop{\contaPrioridade}{\listaContatos}
+
+\newcommand{\resumoPrioridades}{%
+  \number\value{prioP1}{} empresas P1 (máxima) \textbullet{}
+  \number\value{prioP2}{} P2 (alta) \textbullet{}
+  \number\value{prioP3}{} P3 (oportunidade)%
 }
 
 \begin{document}
 \cabecalhoInstitucional
 
 \begin{center}
-{\Large\bfseries\color{azulpetroleo} Diretório de Contatos para Prospecção}\\[1.5mm]
+{\Large\bfseries\color{azulpetroleo} Diretório Interno de Prospecção}\\[1.5mm]
 {\small Programa de Modernização Tecnológica dos Laboratórios do DEE}
 \end{center}
 
 \begin{destaque}
 \textbf{Documento de uso interno.} Reúne os registros de \texttt{empresas/contatos\_brasil.tex},
-que alimentam automaticamente o campo \emph{A/C} dos ofícios. Não deve ser anexado ao pacote
-enviado às empresas. Última verificação da base: \textbf{13/09/2026}; confirme o responsável
-nominal e os dados externos no site oficial imediatamente antes de cada expedição.
+fonte única da prioridade, da estratégia e do contato de cada empresa. Desses campos, apenas o
+setor prioritário chega ao ofício, no campo \emph{A/C}; os demais são informação de trabalho e
+não devem ser anexados ao pacote enviado às empresas.
+
+\vspace{1.2mm}
+\textbf{Base:} \resumoPrioridades. A prioridade é interna e preliminar: indica ordem de esforço,
+não probabilidade de doação. Última verificação dos contatos: \textbf{13/09/2026}; confirme o
+responsável nominal e os dados externos no site oficial imediatamente antes de cada expedição.
 \end{destaque}
 
 \vspace{2mm}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{@{}p{0.035\textwidth} >{\RaggedRight\arraybackslash}p{0.26\textwidth} >{\RaggedRight\arraybackslash}p{0.64\textwidth}@{}}
 \toprule
-\textbf{\#} & \textbf{Empresa / situação} & \textbf{Setor prioritário e canal no Brasil}\\
+\textbf{\#} & \textbf{Empresa, prioridade e situação} & \textbf{Setor prioritário, canal no Brasil e estratégia}\\
 \midrule
 \endfirsthead
 \toprule
-\textbf{\#} & \textbf{Empresa / situação} & \textbf{Setor prioritário e canal no Brasil}\\
+\textbf{\#} & \textbf{Empresa, prioridade e situação} & \textbf{Setor prioritário, canal no Brasil e estratégia}\\
 \midrule
 \endhead
 \bottomrule
