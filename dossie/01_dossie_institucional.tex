@@ -23,7 +23,11 @@
   boxrule=0.55pt,
   arc=1.4mm,
   left=3mm,right=3mm,top=2.6mm,bottom=2.6mm,
-  before upper={\RaggedRight},
+  % Colunas estreitas: sem hifenização o TeX quebra no espaço, que é onde a
+  % quebra faz sentido ("Abrangência / acadêmica" em vez de "acadê-mica").
+  % Vale para o parágrafo inteiro porque título e corpo são separados por \\,
+  % e o TeX lê \hyphenpenalty no fim do parágrafo.
+  before upper={\RaggedRight\hyphenpenalty=10000\exhyphenpenalty=10000},
   #1
 }
 
