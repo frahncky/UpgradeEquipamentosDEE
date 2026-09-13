@@ -13,6 +13,8 @@ Esta pasta transforma os 60 ofícios em um processo gerenciável.
 
 A coluna **`Chave`** do ranking e do CRM é o identificador da empresa — o mesmo nome de arquivo usado em `empresas/` e em `empresas/contatos_brasil.tex`. É por ela que `make verificar` liga as três fontes e acusa divergência de prioridade, empresa faltando ou planilha fora de sincronia; os nomes escritos por extenso variam entre os arquivos e não servem para isso.
 
+`pacotes_prioritarios.md` organiza a composição recomendada para as dez primeiras empresas e liga cada contato ao respectivo ofício e anexo técnico.
+
 Os contatos das empresas não ficam aqui: a base é `empresas/contatos_brasil.tex`, e o PDF de conferência é `empresas/diretorio_contatos.tex`.
 
 ## Score
