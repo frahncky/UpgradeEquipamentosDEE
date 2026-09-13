@@ -21,12 +21,18 @@ Documentos institucionais em LaTeX:
 ### `empresas/`
 - 60 ofícios individualizados;
 - `base_empresa.tex` - corpo comum;
-- `contatos_brasil.tex` - setor prioritário e contato brasileiro centralizado.
+- `contatos_brasil.tex` - fonte única dos dados de prospecção das 60 empresas: prioridade, estratégia, situação, setor prioritário e canal brasileiro;
+- `diretorio_contatos.tex` - diretório interno, em PDF, de toda a base (não deve ser enviado às empresas).
 
 ### `dossie/`
-- dossiê institucional do DEE em LaTeX;
-- contrapartidas institucionais possíveis;
-- checklist de fotografias para a versão final.
+- `01_dossie_institucional.tex` - dossiê institucional do DEE em LaTeX;
+- `02_contrapartidas_institucionais.md` - contrapartidas possíveis e limites;
+- `corpo_docente.tex` - distribuição do corpo docente por macroárea;
+- `cenario_maranhao.tex` - contexto econômico, industrial, logístico e energético do Maranhão;
+- `fontes_cenario_maranhao.md` - fontes oficiais dos indicadores regionais;
+- `fluxo_laboratorios.tex` - fluxo em blocos da estrutura laboratorial.
+
+O dossiê é apresentado **sem fotografias**: a infraestrutura é descrita pelo fluxo em blocos.
 
 ### `laboratorios/`
 - matriz Laboratório x Empresa x Equipamento;
@@ -58,9 +64,32 @@ Anexos técnicos das dez empresas da primeira onda, todos com três níveis de s
 
 O ranking é **interno e preliminar**. Não representa probabilidade estatística de doação.
 
+## Compilação
+
+Todos os documentos usam caminhos relativos à raiz do repositório (`\input{modelos/preambulo.tex}`), portanto **a compilação deve ser feita a partir desta pasta**, com **pdfLaTeX**:
+
+```bash
+make              # todos os PDFs em build/
+make oficios      # somente os 60 ofícios
+make dossie       # somente o dossiê institucional
+make diretorio    # somente o diretório interno de contatos
+make clean
+```
+
+Sem `make`, compile um documento individualmente (duas passagens, por causa do sumário e do `\pageref{LastPage}`):
+
+```bash
+pdflatex empresas/01_schneider_electric.tex
+pdflatex empresas/01_schneider_electric.tex
+```
+
+No Overleaf, selecione o arquivo desejado como **Main document** e use o compilador **pdfLaTeX**.
+
 ## Contatos no Brasil
 
-`empresas/contatos_brasil.tex` centraliza o contato prioritário e o canal brasileiro das 60 empresas. A base foi verificada em **13/09/2026** e deve ser conferida novamente imediatamente antes de cada envio.
+`empresas/contatos_brasil.tex` centraliza, em um registro por empresa, a prioridade, a estratégia de abordagem, o setor prioritário, a situação do contato e o canal brasileiro das 60 empresas. Cada ofício seleciona automaticamente o registro correspondente ao seu nome de arquivo e endereça o documento ao setor prioritário cadastrado; os demais campos, por serem informação de trabalho, aparecem apenas no diretório interno (`empresas/diretorio_contatos.tex`).
+
+A base foi verificada em **13/09/2026** e deve ser conferida novamente imediatamente antes de cada envio.
 
 ## Fluxo operacional
 
