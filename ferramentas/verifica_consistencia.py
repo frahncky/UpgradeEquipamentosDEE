@@ -87,15 +87,22 @@ def main() -> int:
     for chave in sorted(oficios - set(registros)):
         falha(f"empresas/{chave}.tex: ofício sem registro na base de contatos")
 
+    # As passagens que cruzam arquivos indexam colunas direto. Se um cabeçalho
+    # estiver incompleto, elas quebrariam com KeyError e o usuário veria um
+    # traceback no lugar do diagnóstico — então o cabeçalho é pré-requisito.
+    esquema_ok = True
+
     for caminho, coluna in ((RANKING, "Prioridade atual"), (CRM, "Prioridade")):
         conferir_colunas(caminho)
         nome = caminho.relative_to(RAIZ)
         linhas = ler_csv(caminho)
         vistas: set[str] = set()
 
-        ausentes = [c for c in ("Chave", "Empresa", "Rank", coluna) if linhas and c not in linhas[0]]
+        obrigatorias = ("Chave", "Empresa", "Rank", "Onda", coluna)
+        ausentes = [c for c in obrigatorias if linhas and c not in linhas[0]]
         if ausentes:
             falha(f"{nome}: coluna(s) {ausentes} ausente(s) no cabeçalho")
+            esquema_ok = False
             continue
 
         for n, linha in enumerate(linhas, start=2):
@@ -117,17 +124,18 @@ def main() -> int:
         for chave in sorted(set(registros) - vistas):
             falha(f"{nome}: empresa '{chave}' da base não aparece na planilha")
 
-    ranking = {l["Chave"]: l for l in ler_csv(RANKING) if "Chave" in l}
-    for n, linha in enumerate(ler_csv(CRM), start=2):
-        alvo = ranking.get(linha.get("Chave"))
-        if alvo is None:
-            continue
-        for campo in ("Rank", "Empresa", "Onda"):
-            if linha.get(campo) != alvo.get(campo):
-                falha(
-                    f"crm_prospeccao.csv:{n}: {campo} '{linha[campo]}' difere de "
-                    f"'{alvo[campo]}' no ranking"
-                )
+    if esquema_ok:
+        ranking = {l["Chave"]: l for l in ler_csv(RANKING)}
+        for n, linha in enumerate(ler_csv(CRM), start=2):
+            alvo = ranking.get(linha["Chave"])
+            if alvo is None:
+                continue
+            for campo in ("Rank", "Empresa", "Onda"):
+                if linha[campo] != alvo[campo]:
+                    falha(
+                        f"crm_prospeccao.csv:{n}: {campo} '{linha[campo]}' difere de "
+                        f"'{alvo[campo]}' no ranking"
+                    )
 
     conferir_colunas(MATRIZ)
 
@@ -139,10 +147,11 @@ def main() -> int:
     for chave in sorted(anexos - set(registros)):
         falha(f"anexos/{chave}.md: anexo sem empresa correspondente na base")
 
-    for linha in ler_csv(RANKING):
-        chave, onda = linha.get("Chave"), linha.get("Onda")
-        if onda in ONDAS_COM_ANEXO and chave not in anexos:
-            falha(f"{linha['Empresa']} ({onda}) está sem o anexo técnico anexos/{chave}.md")
+    if esquema_ok:
+        for linha in ler_csv(RANKING):
+            chave, onda = linha["Chave"], linha["Onda"]
+            if onda in ONDAS_COM_ANEXO and chave not in anexos:
+                falha(f"{linha['Empresa']} ({onda}) está sem o anexo técnico anexos/{chave}.md")
 
     if falhas:
         print(f"{len(falhas)} divergência(s):", file=sys.stderr)
