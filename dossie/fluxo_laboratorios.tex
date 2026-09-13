@@ -1,0 +1,90 @@
+% Fluxo em blocos da estrutura laboratorial do DEE
+% Componente reutilizável pelo dossiê institucional.
+
+\begin{center}
+\begin{tikzpicture}[
+  >=Latex,
+  blocoTopo/.style={
+    draw=azulpetroleo,
+    fill=azulpetroleo!8,
+    very thick,
+    rounded corners=2mm,
+    align=center,
+    text width=5.7cm,
+    minimum height=1.15cm,
+    font=\sffamily\bfseries
+  },
+  macro/.style={
+    draw=azulpetroleo!80,
+    fill=cinzaclaro,
+    thick,
+    rounded corners=1.8mm,
+    align=left,
+    text width=3.15cm,
+    minimum height=5.0cm,
+    inner sep=3mm,
+    font=\footnotesize
+  },
+  uso/.style={
+    draw=ifmaverde!75!black,
+    fill=ifmaverde!7,
+    thick,
+    rounded corners=1.8mm,
+    align=center,
+    text width=13.5cm,
+    minimum height=1.25cm,
+    inner sep=3mm,
+    font=\footnotesize
+  },
+  seta/.style={->,thick,color=azulpetroleo!80}
+]
+
+\node[blocoTopo] (dee) at (0,0) {Departamento de Eletroeletrônica -- DEE\\[-0.3mm]
+\normalfont\footnotesize IFMA -- Campus São Luís/Monte Castelo};
+
+\node[macro] (auto) at (-6.0,-4.0) {\centering\textbf{AUTOMAÇÃO}\\[2.0mm]
+\raggedright
+$\bullet$ Automação Industrial\\[1mm]
+$\bullet$ Redes Industriais / IoT\\[1mm]
+$\bullet$ Robótica\\[1mm]
+$\bullet$ Pneumática e Eletropneumática\\[1mm]
+$\bullet$ Instrumentação e Sensoriamento};
+
+\node[macro] (elet) at (-2.0,-4.0) {\centering\textbf{ELETRÔNICA E TELECOM}\\[2.0mm]
+\raggedright
+$\bullet$ Eletrônica Analógica e Digital\\[1mm]
+$\bullet$ Sistemas Digitais e Embarcados\\[1mm]
+$\bullet$ Telecomunicações / RF / Redes\\[1mm]
+$\bullet$ Instrumentação Eletrônica\\[1mm]
+$\bullet$ Eletrônica de Potência};
+
+\node[macro] (eletrot) at (2.0,-4.0) {\centering\textbf{ELETROTÉCNICA}\\[2.0mm]
+\raggedright
+$\bullet$ Instalações Elétricas\\[1mm]
+$\bullet$ Medidas Elétricas\\[1mm]
+$\bullet$ Máquinas Elétricas\\[1mm]
+$\bullet$ Comandos Elétricos\\[1mm]
+$\bullet$ Acionamentos e Qualidade de Energia};
+
+\node[macro] (sep) at (6.0,-4.0) {\centering\textbf{SISTEMAS DE ENERGIA}\\[2.0mm]
+\raggedright
+$\bullet$ Proteção e Subestações\\[1mm]
+$\bullet$ Sistemas Elétricos de Potência\\[1mm]
+$\bullet$ Smart Grid\\[1mm]
+$\bullet$ Geração Distribuída\\[1mm]
+$\bullet$ Análise e Monitoramento de Sistemas};
+
+\draw[seta] (dee.south) -- ++(0,-0.55) -| (auto.north);
+\draw[seta] (dee.south) -- ++(0,-0.55) -| (elet.north);
+\draw[seta] (dee.south) -- ++(0,-0.55) -| (eletrot.north);
+\draw[seta] (dee.south) -- ++(0,-0.55) -| (sep.north);
+
+\node[uso] (uso) at (0,-7.75) {\textbf{Uso transversal da infraestrutura:} ensino técnico e superior $\bullet$ aulas práticas $\bullet$ iniciação científica $\bullet$ TCCs e monografias $\bullet$ pesquisas de mestrado e doutorado $\bullet$ extensão $\bullet$ capacitação profissional $\bullet$ projetos de Pesquisa e Desenvolvimento (P\&D), prototipagem, ensaios e validação tecnológica.};
+
+\draw[->,thick,color=ifmaverde!65!black] (auto.south) -- (uso.north -| auto.south);
+\draw[->,thick,color=ifmaverde!65!black] (elet.south) -- (uso.north -| elet.south);
+\draw[->,thick,color=ifmaverde!65!black] (eletrot.south) -- (uso.north -| eletrot.south);
+\draw[->,thick,color=ifmaverde!65!black] (sep.south) -- (uso.north -| sep.south);
+
+\end{tikzpicture}
+\end{center}
