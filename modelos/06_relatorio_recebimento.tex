@@ -1,0 +1,65 @@
+\documentclass[12pt,a4paper]{article}
+\input{modelos/preambulo.tex}
+\begin{document}
+\cabecalhoInstitucional
+
+\begin{center}
+{\Large\bfseries\color{azulpetroleo} Relatório de Recebimento e Conferência de Bens}
+\end{center}
+
+\noindent\textbf{Processo SUAP nº:} \campo{número do processo}\\
+\textbf{Empresa doadora/parceira:} \campo{empresa}\\
+\textbf{Instrumento de formalização:} \campo{termo/contrato/declaração}\\
+\textbf{Data do recebimento:} \campo{data}
+
+\section{Objeto}
+O presente relatório registra o recebimento e a conferência dos bens destinados ao Departamento de Eletroeletrônica — DEE do IFMA — Campus São Luís/Monte Castelo, no âmbito do Programa de Modernização Tecnológica dos Laboratórios do DEE.
+
+\section{Relação dos bens recebidos}
+\begin{tabularx}{\textwidth}{c >{\RaggedRight\arraybackslash}X c >{\RaggedRight\arraybackslash}X}
+\toprule
+\textbf{Item} & \textbf{Descrição} & \textbf{Qtd.} & \textbf{Estado/observações}\\
+\midrule
+1 & \campo{bem} & \campo{qtd.} & \campo{estado de conservação / nº de série}\\
+2 & \campo{bem} & \campo{qtd.} & \campo{estado de conservação / nº de série}\\
+3 & \campo{bem} & \campo{qtd.} & \campo{estado de conservação / nº de série}\\
+\bottomrule
+\end{tabularx}
+
+\section{Conferência}
+\begin{itemize}[leftmargin=*]
+\item[$\square$] Quantidades conferidas;
+\item[$\square$] Identificação/modelo conferidos;
+\item[$\square$] Números de série registrados, quando aplicável;
+\item[$\square$] Estado físico verificado;
+\item[$\square$] Acessórios e manuais recebidos;
+\item[$\square$] Teste funcional realizado, quando aplicável;
+\item[$\square$] Documentação da doação anexada ao processo;
+\item[$\square$] Pendências registradas abaixo.
+\end{itemize}
+
+\section{Pendências ou ressalvas}
+\campo{Descrever pendências, divergências, ausência de acessórios, necessidade de teste, reparo ou qualquer ressalva.}
+
+\section{Encaminhamento}
+Após a conferência, recomenda-se o encaminhamento ao setor competente para registro patrimonial, tombamento e demais providências cabíveis, antes da destinação definitiva aos laboratórios do DEE, quando aplicável.
+
+\section{Destinação acadêmica proposta}
+\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}X >{\RaggedRight\arraybackslash}X}
+\toprule
+\textbf{Bem/equipamento} & \textbf{Laboratório ou atividade de destino}\\
+\midrule
+\campo{equipamento} & \campo{laboratório}\\
+\campo{equipamento} & \campo{laboratório}\\
+\bottomrule
+\end{tabularx}
+
+\vfill
+\begin{center}
+\cidade, \campo{data}.\\[12mm]
+\rule{7cm}{0.4pt}\\
+\campo{Responsável pela conferência}\\[10mm]
+\rule{7cm}{0.4pt}\\
+\campo{Chefia do DEE / setor competente}
+\end{center}
+\end{document}
