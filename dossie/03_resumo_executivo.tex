@@ -7,6 +7,11 @@
 \setlength{\parskip}{0.20em}
 \pagestyle{empty}
 
+% As caixas lado a lado usam tcbraster: o tabularx alinharia pela primeira
+% linha de base, deixando os topos desencontrados quando os textos têm
+% alturas diferentes. O raster alinha pelo topo e iguala as alturas da linha.
+\tcbuselibrary{raster}
+
 \newtcolorbox{resumobox}[1]{
   title={\sffamily\bfseries #1},
   coltitle=azulpetroleo,
@@ -35,32 +40,31 @@
 Modernizar a infraestrutura de ensino e pesquisa do DEE por meio de doações, cooperação técnica, licenças, capacitação e projetos de P\&D com empresas. A iniciativa atende aos cursos técnicos de Eletrotécnica, Eletrônica e Automação e ao curso de Engenharia Elétrica.
 \end{resumobox}
 
-\noindent\begin{tabularx}{\textwidth}{X X X}
+\begin{tcbraster}[raster columns=3, raster equal height=rows,
+                  raster column skip=2.5mm, raster left skip=0pt, raster right skip=0pt]
 \begin{resumobox}{Capacidade}
 \centering{\sffamily\Large\bfseries\color{azulpetroleo} 34}\\[-0.5mm]
 {\small docentes em macroáreas complementares}
 \end{resumobox}
-&
 \begin{resumobox}{Prospecção}
 \centering{\sffamily\Large\bfseries\color{azulpetroleo} 60}\\[-0.5mm]
 {\small empresas classificadas e organizadas}
 \end{resumobox}
-&
 \begin{resumobox}{Abrangência}
 \centering{\sffamily\Large\bfseries\color{azulpetroleo} 14}\\[-0.5mm]
 {\small eixos de modernização tecnológica}
 \end{resumobox}
-\end{tabularx}
+\end{tcbraster}
 
-\noindent\begin{tabularx}{\textwidth}{X X}
+\begin{tcbraster}[raster columns=2, raster equal height=rows,
+                  raster column skip=2.5mm, raster left skip=0pt, raster right skip=0pt]
 \begin{resumobox}{Competências estratégicas}
 \small Automação e IIoT; eletrônica e sistemas embarcados; IA e aprendizado de máquina; sensores inteligentes; telecomunicações; máquinas e acionamentos; proteção e sistemas de energia; renováveis, armazenamento e microredes; cibersegurança OT; robótica e visão computacional.
 \end{resumobox}
-&
 \begin{resumobox}{Apoios prioritários}
 \small Bancadas e instrumentos; CLPs, IHMs e redes; kits embarcados; workstations com GPU; relés e IEDs; plataformas de software; licenças educacionais; atualização de equipamentos; treinamento de servidores e estudantes.
 \end{resumobox}
-\end{tabularx}
+\end{tcbraster}
 
 \begin{resumobox}{Resultados e compromissos}
 \small A parceria deverá fortalecer aulas práticas, iniciação científica, TCCs, pesquisas de mestrado e doutorado, extensão e projetos de P\&D. O DEE prevê registro patrimonial, destinação documentada, acompanhamento de uso, manutenção, segurança, relatórios de resultados e reconhecimento institucional compatível com as normas do IFMA.
