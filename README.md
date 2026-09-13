@@ -73,8 +73,11 @@ make              # todos os PDFs em build/
 make oficios      # somente os 60 ofícios
 make dossie       # somente o dossiê institucional
 make diretorio    # somente o diretório interno de contatos
+make verificar    # confere a coerência entre a base de contatos e as planilhas
 make clean
 ```
+
+A compilação e a verificação também rodam no CI (`.github/workflows/documentos.yml`) a cada pull request: um job compila os 69 documentos e publica os PDFs, outro roda a conferência de coerência.
 
 Sem `make`, compile um documento individualmente (duas passagens, por causa do sumário e do `\pageref{LastPage}`):
 
