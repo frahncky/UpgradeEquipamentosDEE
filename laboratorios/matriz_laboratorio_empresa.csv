@@ -2,17 +2,17 @@ Laboratório/Eixo,Necessidades prioritárias,Empresas primárias,Empresas secund
 Automação Industrial,"CLPs, IHMs, I/O remoto, SCADA, fontes, sensores, bancadas",Schneider; Siemens; Rockwell; Altus; OMRON,Beckhoff; WAGO; Delta; Phoenix Contact,Estruturante
 Redes Industriais e Indústria 4.0,"EtherCAT, PROFINET, EtherNet/IP, Modbus TCP, IO-Link, switches",Siemens; Rockwell; Beckhoff; Phoenix Contact,WAGO; Cisco; ifm; Balluff,Estruturante
 Eletrônica Analógica e Digital,"Osciloscópios, fontes, geradores, DMM, LCR, analisadores lógicos",RIGOL; SIGLENT; FNIRSI; Keysight,Tektronix/Keithley; Pico; Minipa,Kit
-Sistemas Digitais, Embarcados e IoT,"Analisadores lógicos, kits MCU, DAQ, gateways, sensores, IoT",STMicroelectronics; Texas Instruments; Intelbras,NI; FNIRSI; Huawei; Pico,Kit
-Telecomunicações, RF e Óptica,"Analisador de espectro, VNA, RF, fibra óptica, redes móveis",Rohde & Schwarz; Anritsu; VIAVI,Keysight; Pico; Huawei; Cisco,Estruturante
+"Sistemas Digitais, Embarcados e IoT","Analisadores lógicos, kits MCU, DAQ, gateways, sensores, IoT",STMicroelectronics; Texas Instruments; Intelbras,NI; FNIRSI; Huawei; Pico,Kit
+"Telecomunicações, RF e Óptica","Analisador de espectro, VNA, RF, fibra óptica, redes móveis",Rohde & Schwarz; Anritsu; VIAVI,Keysight; Pico; Huawei; Cisco,Estruturante
 Máquinas Elétricas,"Motores, transformadores, bancadas de ensaio, instrumentos",WEG; ABB; Siemens,Schneider; HIOKI; Fluke,Estruturante
 Acionamentos e Comandos Elétricos,"Inversores, soft-starters, contatores, proteção de motores, servos",WEG; Schneider; Siemens; ABB,Delta; Yaskawa; Mitsubishi Electric,Estruturante
 Instalações e Medidas Elétricas,"Proteção BT, multímetros, alicates, megômetros, medidores",Schneider; Eaton; Fluke; HIOKI,Minipa; Megger; WEG,Kit
 Qualidade de Energia,"Analisadores de potência, registradores, harmônicos, energia",Fluke; HIOKI; Yokogawa; Schneider,Equatorial; Megger; Keysight,Kit
-Proteção, Subestações e SEP,"Relés, IEDs, RTAC, IEC 61850, TC/TP, testes",SEL; Hitachi Energy; ABB; Siemens,Schneider; Megger; Equatorial,Estruturante
+"Proteção, Subestações e SEP","Relés, IEDs, RTAC, IEC 61850, TC/TP, testes",SEL; Hitachi Energy; ABB; Siemens,Schneider; Megger; Equatorial,Estruturante
 Smart Grid e Geração Distribuída,"Medidores inteligentes, automação de distribuição, solar, armazenamento",Equatorial; Schneider; Siemens,Huawei; SEL; Eneva,Estruturante
 Eletrônica de Potência,"MOSFET/IGBT/SiC/GaN, drivers, conversores, controle digital",Infineon; Texas Instruments; STMicroelectronics,onsemi; WEG; Delta,Kit
 Instrumentação Industrial,"Pressão, vazão, nível, temperatura, 4-20 mA, válvulas",Endress+Hauser; Emerson; Yokogawa,Pepperl+Fuchs; SICK; ifm,Estruturante
-Sensores, Visão e Identificação,"Fotoelétricos, proximidade, LiDAR, visão, RFID, IO-Link",SICK; OMRON; Balluff; ifm,Pepperl+Fuchs; WAGO,Kit
+"Sensores, Visão e Identificação","Fotoelétricos, proximidade, LiDAR, visão, RFID, IO-Link",SICK; OMRON; Balluff; ifm,Pepperl+Fuchs; WAGO,Kit
 Pneumática e Eletropneumática,"Bancadas, válvulas, cilindros, sensores, controle",Festo; SMC,OMRON; ifm,Estruturante
 Hidráulica,"Bancadas, válvulas proporcionais, acionamentos e controle",Bosch Rexroth,Festo; SMC,Estruturante
 Computação para Engenharia,"Workstations, servidores, monitores, HPC",Dell; Lenovo; Petrobras,Vale; Huawei; Cisco,Infraestrutura

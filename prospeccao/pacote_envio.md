@@ -22,7 +22,7 @@ A mensagem deve:
 
 ## Antes de enviar
 - conferir número/data do ofício;
-- confirmar contato em `empresas/contatos_brasil.tex`;
+- confirmar contato em `empresas/contatos_brasil.tex` (ou no PDF de `empresas/diretorio_contatos.tex`);
 - verificar se o nome da empresa está correto;
 - revisar quantidades do anexo;
 - gerar PDFs finais;

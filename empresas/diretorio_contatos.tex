@@ -1,0 +1,60 @@
+% Diretório interno de contatos — DEE/IFMA
+% Documento de trabalho: reúne, em um único PDF, os 60 registros de
+% empresas/contatos_brasil.tex (situação, setor prioritário e canal no Brasil).
+%
+% ATENÇÃO: uso interno. Este documento NÃO deve ser enviado às empresas;
+% ele contém orientações de expedição e observações de trabalho do DEE.
+%
+% Compilar a partir da raiz do repositório:
+%   pdflatex empresas/diretorio_contatos.tex
+\documentclass[10pt,a4paper]{article}
+\input{modelos/preambulo.tex}
+\usepackage{longtable}
+\geometry{a4paper,top=2.0cm,bottom=2.0cm,left=1.8cm,right=1.8cm}
+\input{empresas/contatos_brasil.tex}
+
+\newcounter{contatoNum}
+
+% Uma linha do diretório a partir da chave do registro.
+\newcommand{\linhaContato}[1]{%
+  \stepcounter{contatoNum}%
+  \thecontatoNum &
+  {\bfseries\csuse{contato@#1@empresa}}\par
+  {\footnotesize\color{cinzamedio}\texttt{\detokenize{#1}} — \csuse{contato@#1@status}} &
+  {\bfseries\csuse{contato@#1@setor}}\par
+  \vspace{0.6mm}\csuse{contato@#1@canal}\\
+  \addlinespace[1.2mm]
+}
+
+\begin{document}
+\cabecalhoInstitucional
+
+\begin{center}
+{\Large\bfseries\color{azulpetroleo} Diretório de Contatos para Prospecção}\\[1.5mm]
+{\small Programa de Modernização Tecnológica dos Laboratórios do DEE}
+\end{center}
+
+\begin{destaque}
+\textbf{Documento de uso interno.} Reúne os registros de \texttt{empresas/contatos\_brasil.tex},
+que alimentam automaticamente o campo \emph{A/C} dos ofícios. Não deve ser anexado ao pacote
+enviado às empresas. Última verificação da base: \textbf{13/09/2026}; confirme o responsável
+nominal e os dados externos no site oficial imediatamente antes de cada expedição.
+\end{destaque}
+
+\vspace{2mm}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{@{}p{0.035\textwidth} >{\RaggedRight\arraybackslash}p{0.26\textwidth} >{\RaggedRight\arraybackslash}p{0.64\textwidth}@{}}
+\toprule
+\textbf{\#} & \textbf{Empresa / situação} & \textbf{Setor prioritário e canal no Brasil}\\
+\midrule
+\endfirsthead
+\toprule
+\textbf{\#} & \textbf{Empresa / situação} & \textbf{Setor prioritário e canal no Brasil}\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\forlistloop{\linhaContato}{\listaContatos}
+\end{longtable}
+
+\end{document}

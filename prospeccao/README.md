@@ -11,6 +11,8 @@ Esta pasta transforma os 60 ofícios em um processo gerenciável.
 - `modelos_email.md`: mensagens para primeiro contato e follow-up;
 - `fontes_priorizacao.md`: evidências públicas usadas na Onda 1.
 
+Os contatos das empresas não ficam aqui: a base é `empresas/contatos_brasil.tex`, e o PDF de conferência é `empresas/diretorio_contatos.tex`.
+
 ## Score
 O score é uma ferramenta de gestão e não uma previsão de sucesso. Ele considera:
 - aderência tecnológica: 30 pontos;
