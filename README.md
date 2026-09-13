@@ -17,13 +17,17 @@ Repositório de modelos institucionais em LaTeX para organizar a prospecção, f
 
 ### Modelos personalizados por empresa
 
-A pasta `empresas/` contém um modelo-base compartilhado e **53 ofícios LaTeX personalizados**, organizados por prioridade:
+A pasta `empresas/` contém um modelo-base compartilhado e **60 ofícios LaTeX personalizados**, organizados por prioridade:
 
-- **P1 — Máxima:** Schneider Electric, Vale, Eneva, Equatorial Energia, WEG, Rockwell Automation, Siemens, Altus, Intelbras, Petrobras, Schweitzer Engineering Laboratories (SEL) e Endress+Hauser;
-- **P2 — Alta:** Festo, SMC, ABB, Alcoa/Alumar, Suzano, Hitachi Energy, Eaton, Phoenix Contact, Emerson, Fluke, FNIRSI, RIGOL, SIGLENT, Universal Robots, FANUC, KUKA, OMRON, Beckhoff, WAGO, SICK, ifm electronic, Balluff, Pepperl+Fuchs, Weidmüller, Delta Electronics, Yokogawa, HIOKI, Megger e Minipa;
+- **P1 — Máxima:** Schneider Electric, Vale, Eneva, Equatorial Energia, WEG, Rockwell Automation, Siemens, Altus, Intelbras, Petrobras, Schweitzer Engineering Laboratories (SEL), Endress+Hauser, Rohde & Schwarz, Infineon Technologies e Texas Instruments;
+- **P2 — Alta:** Festo, SMC, ABB, Alcoa/Alumar, Suzano, Hitachi Energy, Eaton, Phoenix Contact, Emerson, Fluke, FNIRSI, RIGOL, SIGLENT, Universal Robots, FANUC, KUKA, OMRON, Beckhoff, WAGO, SICK, ifm electronic, Balluff, Pepperl+Fuchs, Weidmüller, Delta Electronics, Yokogawa, HIOKI, Megger, Minipa, Anritsu, VIAVI Solutions, STMicroelectronics e onsemi;
 - **P3 — Oportunidade:** Keysight, Tektronix/Keithley, National Instruments, Yaskawa, Mitsubishi Electric, Bosch Rexroth, Cisco, Huawei, Dell Technologies, Lenovo, Instrutherm e Pico Technology.
 
 A classificação indica prioridade de prospecção do DEE. Nem toda empresa possui programa público permanente de doação; quando não há confirmação, o modelo é tratado como prospecção estratégica de parceria, cessão, demonstração, apoio educacional ou eventual doação conforme política da empresa.
+
+### Cobertura tecnológica
+
+A prospecção contempla Automação Industrial, Robótica, Redes Industriais, Instrumentação, Eletrônica Analógica e Digital, Telecomunicações/RF, Redes Ópticas, Sistemas Digitais, IoT, Eletrônica de Potência, Semicondutores de Potência, Medição Elétrica, Qualidade de Energia, Máquinas e Acionamentos, Instalações, Proteção, Subestações, Sistemas Elétricos de Potência, Smart Grid, Geração Distribuída, Aquisição de Dados, Manutenção, Pneumática, Hidráulica e Computação para Engenharia.
 
 ## Fluxo recomendado
 
