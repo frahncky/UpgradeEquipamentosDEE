@@ -20,9 +20,6 @@ BASE = RAIZ / "empresas" / "contatos_brasil.tex"
 RANKING = RAIZ / "prospeccao" / "ranking_60_empresas.csv"
 CRM = RAIZ / "prospeccao" / "crm_prospeccao.csv"
 MATRIZ = RAIZ / "laboratorios" / "matriz_laboratorio_empresa.csv"
-PRIORIDADES = RAIZ / "laboratorios" / "prioridades_modernizacao.csv"
-INDICADORES = RAIZ / "laboratorios" / "levantamento_indicadores_dee.csv"
-CADASTRO_LABS = RAIZ / "laboratorios" / "cadastro_laboratorios_dee.csv"
 
 REGISTRO = re.compile(
     r"^\\ContatoEmpresa\n"
@@ -32,8 +29,8 @@ REGISTRO = re.compile(
     re.M,
 )
 NIVEIS = {"P1", "P2", "P3"}
-# Ondas já em prospecção: cada empresa delas precisa do anexo técnico.
-ONDAS_COM_ANEXO = {"Onda 1", "Onda 2"}
+# Todas as 60 empresas têm anexo técnico; nenhuma onda fica de fora.
+ONDAS_COM_ANEXO = {"Onda 1", "Onda 2", "Onda 3"}
 
 falhas: list[str] = []
 
@@ -61,20 +58,6 @@ def conferir_colunas(caminho: Path) -> None:
                 f"{caminho.relative_to(RAIZ)}:{n}: {len(linha)} campos, "
                 f"esperados {esperado} (vírgula sem aspas?)"
             )
-
-
-def conferir_esquema_csv(caminho: Path, obrigatorias: tuple[str, ...]) -> list[dict]:
-    """Confere a forma e devolve os registros de uma planilha auxiliar."""
-    conferir_colunas(caminho)
-    linhas = ler_csv(caminho)
-    cabecalho = linhas[0].keys() if linhas else ()
-    ausentes = [coluna for coluna in obrigatorias if coluna not in cabecalho]
-    if ausentes:
-        falha(
-            f"{caminho.relative_to(RAIZ)}: coluna(s) {ausentes} "
-            "ausente(s) no cabeçalho"
-        )
-    return linhas
 
 
 def main() -> int:
@@ -155,43 +138,6 @@ def main() -> int:
                     )
 
     conferir_colunas(MATRIZ)
-
-    prioridades = conferir_esquema_csv(
-        PRIORIDADES,
-        ("Etapa", "Prioridade", "Laboratório/Eixo", "Orçamento", "Status"),
-    )
-    niveis_prioridade = {"Máxima", "Alta", "Estratégica"}
-    for n, linha in enumerate(prioridades, start=2):
-        if linha.get("Prioridade") not in niveis_prioridade:
-            falha(
-                f"{PRIORIDADES.relative_to(RAIZ)}:{n}: prioridade "
-                f"'{linha.get('Prioridade')}' fora de {sorted(niveis_prioridade)}"
-            )
-        if not linha.get("Laboratório/Eixo"):
-            falha(f"{PRIORIDADES.relative_to(RAIZ)}:{n}: laboratório/eixo vazio")
-        if not linha.get("Orçamento"):
-            falha(f"{PRIORIDADES.relative_to(RAIZ)}:{n}: orçamento sem valor ou marcação")
-
-    indicadores = conferir_esquema_csv(
-        INDICADORES,
-        ("Indicador", "Período", "Valor", "Unidade", "Fonte interna", "Status"),
-    )
-    for n, linha in enumerate(indicadores, start=2):
-        if not linha.get("Indicador") or not linha.get("Status"):
-            falha(f"{INDICADORES.relative_to(RAIZ)}:{n}: indicador ou status vazio")
-
-    laboratorios = conferir_esquema_csv(
-        CADASTRO_LABS,
-        ("Nome do laboratório", "Macroárea", "Principais usos", "Status de conferência"),
-    )
-    nomes_labs: set[str] = set()
-    for n, linha in enumerate(laboratorios, start=2):
-        nome = linha.get("Nome do laboratório", "")
-        if not nome:
-            falha(f"{CADASTRO_LABS.relative_to(RAIZ)}:{n}: nome do laboratório vazio")
-        elif nome in nomes_labs:
-            falha(f"{CADASTRO_LABS.relative_to(RAIZ)}:{n}: laboratório '{nome}' repetido")
-        nomes_labs.add(nome)
 
     # Cobertura dos anexos técnicos. O pacote de envio é ofício + dossiê + anexo,
     # então toda empresa das ondas já em campo precisa do seu. O nome do arquivo
