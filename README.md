@@ -48,7 +48,7 @@ O dossiê é apresentado **sem fotografias**: a infraestrutura é descrita pelo 
 - fontes de priorização.
 
 ### `anexos/`
-Anexos técnicos das 36 empresas das Ondas 1 e 2, todos com três níveis de solicitação (Ideal/Intermediário/Mínimo). O arquivo tem o mesmo nome do ofício correspondente.
+Anexos técnicos das 60 empresas, todos com três níveis de solicitação (Ideal/Intermediário/Mínimo). O arquivo tem o mesmo nome do ofício correspondente.
 
 ## Top 10 - primeira onda
 1. Schneider Electric
