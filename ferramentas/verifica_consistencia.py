@@ -19,7 +19,13 @@ RAIZ = Path(__file__).resolve().parent.parent
 BASE = RAIZ / "empresas" / "contatos_brasil.tex"
 RANKING = RAIZ / "prospeccao" / "ranking_60_empresas.csv"
 CRM = RAIZ / "prospeccao" / "crm_prospeccao.csv"
-MATRIZ = RAIZ / "laboratorios" / "matriz_laboratorio_empresa.csv"
+# Planilhas sem cruzamento com a base, conferidas apenas quanto à forma: uma
+# vírgula sem aspas num campo de texto já quebrou a matriz antes.
+PLANILHAS = [
+    RAIZ / "laboratorios" / "matriz_laboratorio_empresa.csv",
+    RAIZ / "laboratorios" / "cadastro_laboratorios_dee.csv",
+    RAIZ / "laboratorios" / "levantamento_indicadores_dee.csv",
+]
 
 REGISTRO = re.compile(
     r"^\\ContatoEmpresa\n"
@@ -137,7 +143,11 @@ def main() -> int:
                         f"'{alvo[campo]}' no ranking"
                     )
 
-    conferir_colunas(MATRIZ)
+    for planilha in PLANILHAS:
+        if planilha.is_file():
+            conferir_colunas(planilha)
+        else:
+            falha(f"{planilha.relative_to(RAIZ)}: planilha esperada não encontrada")
 
     # Cobertura dos anexos técnicos. O pacote de envio é ofício + dossiê + anexo,
     # então toda empresa das ondas já em campo precisa do seu. O nome do arquivo
