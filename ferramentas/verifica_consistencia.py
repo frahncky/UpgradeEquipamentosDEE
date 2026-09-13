@@ -21,6 +21,10 @@ RANKING = RAIZ / "prospeccao" / "ranking_60_empresas.csv"
 CRM = RAIZ / "prospeccao" / "crm_prospeccao.csv"
 # Planilhas sem cruzamento com a base, conferidas apenas quanto à forma: uma
 # vírgula sem aspas num campo de texto já quebrou a matriz antes.
+RESUMO = RAIZ / "dossie" / "03_resumo_executivo.tex"
+CORPO_DOCENTE = RAIZ / "dossie" / "corpo_docente.tex"
+PLANO_EIXOS = RAIZ / "laboratorios" / "plano_modernizacao_por_laboratorio.md"
+
 PLANILHAS = [
     RAIZ / "laboratorios" / "matriz_laboratorio_empresa.csv",
     RAIZ / "laboratorios" / "cadastro_laboratorios_dee.csv",
@@ -63,6 +67,58 @@ def conferir_colunas(caminho: Path) -> None:
             falha(
                 f"{caminho.relative_to(RAIZ)}:{n}: {len(linha)} campos, "
                 f"esperados {esperado} (vírgula sem aspas?)"
+            )
+
+
+def numeros_do_painel() -> dict:
+    """Os três números em destaque do resumo executivo, por título da caixa.
+
+    O resumo afirma quantos docentes, empresas e eixos o Departamento tem, e é
+    documento que vai para fora. Cada número vive também em outro lugar, que é
+    a fonte real — daí a conferência.
+    """
+    texto = RESUMO.read_text(encoding="utf-8")
+    painel = {}
+    for titulo, corpo in re.findall(
+        r"\\begin\{resumobox\}\{(.*?)\}(.*?)\\end\{resumobox\}", texto, re.S
+    ):
+        achado = re.search(r"\\color\{azulpetroleo\}\s*(\d+)", corpo)
+        if achado:
+            painel[titulo] = int(achado.group(1))
+    return painel
+
+
+def conferir_numeros(total_empresas: int) -> None:
+    """Compara o painel do resumo executivo com a fonte de cada número."""
+    painel = numeros_do_painel()
+
+    # Docentes: não há lista nominal no repositório, então a fonte é o texto do
+    # corpo docente. A conferência garante que os dois documentos não divirjam.
+    declarado = re.search(
+        r"\\textbf\{(\d+) professores\}", CORPO_DOCENTE.read_text(encoding="utf-8")
+    )
+    eixos = len(
+        re.findall(r"^## \d+\.", PLANO_EIXOS.read_text(encoding="utf-8"), re.M)
+    )
+
+    esperado = {
+        "Capacidade": (int(declarado.group(1)) if declarado else None, "corpo_docente.tex"),
+        "Prospecção": (total_empresas, "a base de contatos"),
+        "Abrangência": (eixos or None, "plano_modernizacao_por_laboratorio.md"),
+    }
+
+    for titulo, (valor, fonte) in esperado.items():
+        if valor is None:
+            falha(f"03_resumo_executivo.tex: não foi possível apurar '{titulo}' em {fonte}")
+            continue
+        if titulo not in painel:
+            # Um painel reescrito não pode fazer a conferência parar em silêncio.
+            falha(f"03_resumo_executivo.tex: número de '{titulo}' não localizado no painel")
+            continue
+        if painel[titulo] != valor:
+            falha(
+                f"03_resumo_executivo.tex: '{titulo}' diz {painel[titulo]}, "
+                f"mas {fonte} indica {valor}"
             )
 
 
@@ -162,6 +218,8 @@ def main() -> int:
             chave, onda = linha["Chave"], linha["Onda"]
             if onda in ONDAS_COM_ANEXO and chave not in anexos:
                 falha(f"{linha['Empresa']} ({onda}) está sem o anexo técnico anexos/{chave}.md")
+
+    conferir_numeros(len(registros))
 
     if falhas:
         print(f"{len(falhas)} divergência(s):", file=sys.stderr)

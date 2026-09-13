@@ -18,7 +18,7 @@ Ranking operacional para iniciar a prospecção. O score é **interno e prelimin
 ## Ordem de execução
 
 1. Finalizar ofício e anexo técnico individual.
-2. Anexar dossiê institucional do DEE.
+2. Anexar o resumo executivo; o dossiê institucional completo, conforme o estágio da conversa.
 3. Conferir o contato em `empresas/contatos_brasil.tex` — ou no diretório interno `empresas/diretorio_contatos.tex` — no dia do envio.
 4. Registrar o envio no CRM.
 5. Fazer follow-up conforme `calendario_followup.md`.

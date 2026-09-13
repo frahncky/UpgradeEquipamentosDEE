@@ -4,9 +4,15 @@ Cada empresa deve receber um pacote enxuto, com os arquivos em PDF e nomes padro
 
 ## Arquivos
 1. `01_Oficio_DEE_IFMA_<EMPRESA>.pdf`
-2. `02_Dossie_Institucional_DEE_IFMA.pdf`
+2. `02_Resumo_Executivo_DEE_IFMA.pdf`
 3. `03_Anexo_Tecnico_<EMPRESA>.pdf`
-4. quando necessário, `04_Plano_Equipamentos_<EMPRESA>.pdf`
+4. `04_Dossie_Institucional_DEE_IFMA.pdf`, quando adequado ao estágio da conversa
+5. quando necessário, `05_Plano_Equipamentos_<EMPRESA>.pdf`
+
+A ordem segue a composição definida em `pacotes_prioritarios.md`. O **resumo executivo**
+(`dossie/03_resumo_executivo.tex`) vem logo depois do ofício porque tem uma página só, e é
+por ela que quem abre o pacote pela primeira vez decide o encaminhamento; o dossiê completo
+fica para quem quiser aprofundar.
 
 ## Corpo do envio
 A mensagem deve:
@@ -22,6 +28,7 @@ A mensagem deve:
 
 ## Antes de enviar
 - conferir número/data do ofício;
+- gerar o resumo executivo atualizado (`make dossie`);
 - confirmar contato em `empresas/contatos_brasil.tex` (ou no PDF de `empresas/diretorio_contatos.tex`);
 - verificar se o nome da empresa está correto;
 - revisar quantidades do anexo;

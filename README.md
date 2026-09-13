@@ -105,7 +105,7 @@ A base foi verificada em **13/09/2026** e deve ser conferida novamente imediatam
 1. Confirmar necessidade do laboratório.
 2. Selecionar empresa e anexo técnico.
 3. Gerar ofício individual.
-4. Anexar dossiê institucional.
+4. Anexar o resumo executivo e, conforme o estágio da conversa, o dossiê institucional.
 5. Conferir contato brasileiro.
 6. Registrar no CRM.
 7. Enviar o pacote.
