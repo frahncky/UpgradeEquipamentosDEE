@@ -39,6 +39,8 @@ REGISTRO = re.compile(
     re.M,
 )
 NIVEIS = {"P1", "P2", "P3"}
+# Marca um número cuja divergência já foi reportada na própria fonte.
+SEM_CONFERIR = object()
 # Todas as 60 empresas têm anexo técnico; nenhuma onda fica de fora.
 ONDAS_COM_ANEXO = {"Onda 1", "Onda 2", "Onda 3"}
 
@@ -88,26 +90,62 @@ def numeros_do_painel() -> dict:
     return painel
 
 
+def totais_docentes() -> set:
+    """Todos os lugares onde corpo_docente.tex afirma o total de docentes.
+
+    O total aparece três vezes no mesmo documento — na prosa de abertura, no
+    número em destaque e na nota sobre sobreposição de áreas. Ler só o primeiro
+    deixaria passar o caso em que um é atualizado e os outros não, com o
+    documento se contradizendo à vista do leitor. Os números por macroárea não
+    entram aqui: são outra grandeza, e sua soma é maior que o total de propósito.
+    """
+    texto = CORPO_DOCENTE.read_text(encoding="utf-8")
+    achados = {int(n) for n in re.findall(r"(\d+) professores", texto)}
+    # O número em destaque é o que fecha a chave logo antes da quebra de linha
+    # e do rótulo "docentes" — âncora necessária para não capturar o corpo de
+    # \fontsize{28}{30}, que também é um número seguido de chave.
+    destaque = re.search(
+        r"(\d+)\}\s*\\\\\[[^\]]*\]\s*\n\s*\{[^{}]*\bdocentes\}", texto
+    )
+    if destaque:
+        achados.add(int(destaque.group(1)))
+    return achados
+
+
 def conferir_numeros(total_empresas: int) -> None:
     """Compara o painel do resumo executivo com a fonte de cada número."""
     painel = numeros_do_painel()
 
     # Docentes: não há lista nominal no repositório, então a fonte é o texto do
-    # corpo docente. A conferência garante que os dois documentos não divirjam.
-    declarado = re.search(
-        r"\\textbf\{(\d+) professores\}", CORPO_DOCENTE.read_text(encoding="utf-8")
-    )
+    # corpo docente. A conferência garante que os documentos não divirjam.
+    totais = totais_docentes()
+    if len(totais) > 1:
+        # Documento em contradição consigo mesmo: essa é a divergência a
+        # reportar, e não faria sentido cobrar o resumo por um total que a
+        # própria fonte não decidiu.
+        falha(
+            "corpo_docente.tex: o total de docentes aparece como "
+            + " e ".join(str(t) for t in sorted(totais))
+            + " no mesmo documento"
+        )
+        declarado = SEM_CONFERIR
+    elif totais:
+        declarado = totais.pop()
+    else:
+        declarado = None
     eixos = len(
         re.findall(r"^## \d+\.", PLANO_EIXOS.read_text(encoding="utf-8"), re.M)
     )
 
     esperado = {
-        "Capacidade": (int(declarado.group(1)) if declarado else None, "corpo_docente.tex"),
+        "Capacidade": (declarado, "corpo_docente.tex"),
         "Prospecção": (total_empresas, "a base de contatos"),
         "Abrangência": (eixos or None, "plano_modernizacao_por_laboratorio.md"),
     }
 
     for titulo, (valor, fonte) in esperado.items():
+        if valor is SEM_CONFERIR:
+            continue
         if valor is None:
             falha(f"03_resumo_executivo.tex: não foi possível apurar '{titulo}' em {fonte}")
             continue
