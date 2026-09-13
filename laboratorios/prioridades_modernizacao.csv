@@ -1,0 +1,15 @@
+Etapa,Prioridade,Laboratório/Eixo,Resultado esperado,Pacote de referência,Orçamento,Status
+1,Máxima,Instalações Medidas e Qualidade da Energia,Recompor instrumentação e ampliar práticas seguras,Instrumentos e módulos RLC para grupos,A cotar,Proposta técnica para validação
+1,Máxima,Máquinas Elétricas e Acionamentos,Modernizar ensaios de motores transformadores e acionamentos,3 a 6 bancadas completas,A cotar,Proposta técnica para validação
+1,Máxima,Automação Industrial,Atualizar CLPs IHMs redes e supervisão,5 a 10 estações integradas,A cotar,Proposta técnica para validação
+1,Máxima,Eletrônica Sistemas Digitais e Embarcados,Renovar instrumentação e kits de desenvolvimento,4 a 8 bancadas completas,A cotar,Proposta técnica para validação
+1,Máxima,Computação Engenharia e IA,Viabilizar simulação ciência de dados e treinamento de modelos,10 a 20 workstations com GPU e servidor,A cotar,Proposta técnica para validação
+2,Alta,Proteção Subestações e Sistemas de Energia,Implantar práticas com relés IEDs e IEC 61850,Relés controladores software e instrumentos,A cotar,Proposta técnica para validação
+2,Alta,Instrumentação e Sensores Inteligentes,Integrar medição redes industriais e processamento na borda,Bancada de processo e kits de sensores,A cotar,Proposta técnica para validação
+2,Alta,Telecomunicações e RF,Criar capacidade didática em RF fibra e redes,Analisador VNA e kits ópticos,A cotar,Proposta técnica para validação
+2,Alta,Eletrônica de Potência,Ampliar práticas com semicondutores e conversores,6 kits SiC GaN IGBT e conversores,A cotar,Proposta técnica para validação
+2,Alta,Robótica Inteligente e Visão Computacional,Implantar percepção inspeção e robótica colaborativa,Cobot câmera controlador e segurança,A cotar,Proposta técnica para validação
+3,Estratégica,Cibersegurança Industrial e OT,Criar ambiente isolado para segurança de automação e energia,Cyber range OT e rede segmentada,A cotar,Proposta técnica para validação
+3,Estratégica,Gêmeos Digitais e Simulação,Integrar modelos virtuais dados e bancadas físicas,Licenças workstations e bancada integrada,A cotar,Proposta técnica para validação
+3,Estratégica,Transição Energética e Mobilidade Elétrica,Desenvolver práticas com renováveis baterias microredes e recarga,Microrrede didática e estação de recarga,A cotar,Proposta técnica para validação
+3,Estratégica,Pneumática Eletropneumática e Hidráulica,Atualizar práticas de automação de processos,2 a 4 bancadas didáticas,A cotar,Proposta técnica para validação
