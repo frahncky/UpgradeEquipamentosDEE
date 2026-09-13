@@ -2,6 +2,10 @@
 build/
 *.pdf
 
+# Cache do Python (ferramentas/)
+__pycache__/
+*.pyc
+
 # Arquivos auxiliares do LaTeX
 *.aux
 *.log
