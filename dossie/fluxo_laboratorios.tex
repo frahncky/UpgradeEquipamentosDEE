@@ -9,8 +9,9 @@
     thick,
     rounded corners=1.6mm,
     align=left,
+    anchor=north,
     text width=3.15cm,
-    minimum height=4.15cm,
+    minimum height=4.75cm,
     inner sep=3mm,
     execute at begin node={\hyphenpenalty=10000\exhyphenpenalty=10000},
     font=\footnotesize
@@ -45,32 +46,32 @@
 \node[centro] (dee) at (0,0) {DEPARTAMENTO DE ELETROELETRÔNICA -- DEE\\[-0.2mm]
 \normalfont\footnotesize Áreas e laboratórios integrados};
 
-\node[area] (auto) at (-6.0,-4.1) {
+\node[area] (auto) at (-6.0,-2.05) {
 \centering\sffamily\bfseries AUTOMAÇÃO\par\vspace{1.5mm}
 \raggedright\normalfont
 $\bullet$ Instrumentação e controle\\
 $\bullet$ Redes industriais e IoT\\
 $\bullet$ Robótica};
 
-\node[area] (eletronica) at (-2.0,-4.1) {
+\node[area] (eletronica) at (-2.0,-2.05) {
 \centering\sffamily\bfseries ELETRÔNICA E TELECOM\par\vspace{1.5mm}
 \raggedright\normalfont
 $\bullet$ Circuitos analógicos e digitais\\
 $\bullet$ Sistemas embarcados\\
 $\bullet$ RF, redes e telecom};
 
-\node[area] (eletrotecnica) at (2.0,-4.1) {
+\node[area] (eletrotecnica) at (2.0,-2.05) {
 \centering\sffamily\bfseries ELETROTÉCNICA\par\vspace{1.5mm}
 \raggedright\normalfont
 $\bullet$ Instalações e medidas\\
 $\bullet$ Máquinas e comandos\\
 $\bullet$ Acionamentos e qualidade de energia};
 
-\node[area] (sep) at (6.0,-4.1) {
+\node[area] (sep) at (6.0,-2.05) {
 \centering\sffamily\bfseries SISTEMAS DE ENERGIA\par\vspace{1.5mm}
 \raggedright\normalfont
 $\bullet$ Proteção e subestações\\
-$\bullet$ Geração, transmissão e distribuição\\
+$\bullet$ Geração e redes elétricas\\
 $\bullet$ Smart grids e monitoramento};
 
 % Barramentos comuns deixam explícito que as quatro áreas estão no mesmo nível.
@@ -80,12 +81,12 @@ $\bullet$ Smart grids e monitoramento};
 \foreach \bloco in {auto,eletronica,eletrotecnica,sep}
   \draw[seta] (\bloco.north |- entrada) -- (\bloco.north);
 
-\coordinate (saida) at (0,-6.75);
-\draw[barramento] (-6.0,-6.75) -- (6.0,-6.75);
+\coordinate (saida) at (0,-7.15);
+\draw[barramento] (-6.0,-7.15) -- (6.0,-7.15);
 \foreach \bloco in {auto,eletronica,eletrotecnica,sep}
   \draw[seta] (\bloco.south) -- (\bloco.south |- saida);
 
-\node[destino] (uso) at (0,-8.35) {
+\node[destino] (uso) at (0,-8.60) {
 \sffamily\bfseries\color{azulpetroleo} ENSINO \textbullet{} PESQUISA \textbullet{} EXTENSÃO \textbullet{} P\&D\\[0.8mm]
 \normalfont\color{black}Cursos técnicos e Engenharia Elétrica; iniciação científica, TCCs, monografias e pós-graduação; capacitação profissional e projetos com empresas.};
 \draw[seta] (saida) -- (uso.north);
