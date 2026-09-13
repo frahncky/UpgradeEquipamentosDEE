@@ -29,8 +29,8 @@ REGISTRO = re.compile(
     re.M,
 )
 NIVEIS = {"P1", "P2", "P3"}
-# Ondas já em prospecção: cada empresa delas precisa do anexo técnico.
-ONDAS_COM_ANEXO = {"Onda 1", "Onda 2"}
+# Todas as 60 empresas têm anexo técnico; nenhuma onda fica de fora.
+ONDAS_COM_ANEXO = {"Onda 1", "Onda 2", "Onda 3"}
 
 falhas: list[str] = []
 
