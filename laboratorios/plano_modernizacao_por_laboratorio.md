@@ -9,8 +9,8 @@ Este documento apresenta a visão inversa da prospecção: parte da necessidade 
 **Pacote intermediário:** 5 estações.  
 **Pacote mínimo:** 2 CLPs + 2 IHMs + software/licenças.
 
-## 2. Eletrônica e Sistemas Digitais
-**Objetivo:** renovar instrumentação e ampliar análise de sinais e sistemas embarcados.  
+## 2. Eletrônica, Sistemas Digitais e Embarcados
+**Objetivo:** renovar a instrumentação e ampliar a análise de sinais, os sistemas embarcados, a IoT, a inteligência artificial embarcada e o aprendizado de máquina.<br>
 **Empresas-chave:** RIGOL, SIGLENT, FNIRSI, Keysight, Tektronix/Keithley, Pico, Minipa, STMicroelectronics, TI.  
 **Pacote ideal:** instrumentação completa para 8 bancadas.  
 **Intermediário:** 4 bancadas.  
@@ -43,6 +43,7 @@ Este documento apresenta a visão inversa da prospecção: parte da necessidade 
 **Mínimo:** 2 relés + software + treinamento.
 
 ## 7. Instrumentação Industrial
+**Objetivo:** modernizar práticas de medição e controle com transmissores, sensores inteligentes, visão computacional, conectividade industrial e processamento na borda.<br>
 **Empresas-chave:** Endress+Hauser, Emerson, Yokogawa, Pepperl+Fuchs, SICK, ifm.  
 **Ideal:** bancada de processo completa.  
 **Intermediário:** kits de pressão, nível, vazão e temperatura.  
@@ -60,8 +61,9 @@ Este documento apresenta a visão inversa da prospecção: parte da necessidade 
 **Intermediário:** 2 bancadas.  
 **Mínimo:** conjuntos de válvulas, atuadores, sensores e controladores.
 
-## 10. Computação para Engenharia
+## 10. Computação para Engenharia e Inteligência Artificial
+**Objetivo:** ampliar a capacidade computacional para simulação, processamento de dados, treinamento e execução de modelos de inteligência artificial e aprendizado de máquina.<br>
 **Empresas-chave:** Dell, Lenovo, Petrobras, Vale, Huawei.  
-**Ideal:** 20 workstations + servidor.  
-**Intermediário:** 10 workstations.  
-**Mínimo:** 5 estações para software de engenharia e pesquisa.
+**Ideal:** 20 workstations com GPU + servidor de alto desempenho.<br>
+**Intermediário:** 10 workstations com GPU.<br>
+**Mínimo:** 5 estações para software de engenharia, sistemas embarcados, inteligência artificial, aprendizado de máquina e pesquisa.
