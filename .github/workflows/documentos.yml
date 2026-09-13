@@ -3,7 +3,7 @@ name: Documentos
 # O modo de falha deste repositório é silencioso: um documento pode compilar
 # perfeitamente e ainda assim sair com o dado errado, e uma planilha pode
 # divergir da base de contatos sem que nada acuse. Por isso o CI faz as duas
-# coisas: confere a coerência dos dados e compila os 69 documentos.
+# coisas: confere a coerência dos dados e compila os 70 documentos.
 
 on:
   pull_request:
@@ -32,13 +32,13 @@ jobs:
         run: command -v make || (apt-get update && apt-get install -y --no-install-recommends make)
 
       # -halt-on-error no Makefile faz a compilação parar no primeiro erro.
-      - name: Compilar os 69 documentos
+      - name: Compilar os 70 documentos
         run: make
 
       - name: Conferir se todos os PDFs saíram
         run: |
           gerados=$(ls build/*.pdf | wc -l)
-          esperados=$(ls modelos/0*.tex empresas/[0-9]*.tex empresas/diretorio_contatos.tex dossie/01_dossie_institucional.tex | wc -l)
+          esperados=$(ls modelos/0*.tex empresas/[0-9]*.tex empresas/diretorio_contatos.tex dossie/01_dossie_institucional.tex dossie/03_resumo_executivo.tex | wc -l)
           echo "PDFs gerados: $gerados de $esperados"
           test "$gerados" -eq "$esperados"
 
