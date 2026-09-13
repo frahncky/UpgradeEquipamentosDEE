@@ -7,88 +7,57 @@
 {\Large\bfseries\color{azulpetroleo} Plano Técnico de Equipamentos e Empresas Prioritárias}
 \end{center}
 
-
 \section{Critérios de priorização}
-A priorização considera aderência tecnológica ao DEE, possibilidade de uso didático e de pesquisa, potencial de impacto nos laboratórios e adequação do pedido ao portfólio de cada empresa.
+O ranking interno utiliza escala de 0 a 100, composta por:
+\begin{itemize}[leftmargin=*]
+\item aderência tecnológica ao DEE -- 30 pontos;
+\item evidência pública de apoio educacional, cooperação ou doação -- 25 pontos;
+\item presença/operação no Brasil -- 15 pontos;
+\item proximidade Maranhão/Nordeste -- 15 pontos;
+\item impacto potencial -- 10 pontos;
+\item clareza/facilidade do canal de contato -- 5 pontos.
+\end{itemize}
 
-\section{Empresas de prioridade máxima}
-\begin{longtable}{p{0.18\textwidth} p{0.28\textwidth} p{0.18\textwidth} p{0.26\textwidth}}
+O score é apenas uma ferramenta de gestão e deve ser atualizado conforme respostas, editais, mudanças de contato e necessidades do Departamento.
+
+\section{Primeira onda de contato}
+\begin{longtable}{p{0.06\textwidth} p{0.18\textwidth} p{0.12\textwidth} p{0.24\textwidth} p{0.31\textwidth}}
 \toprule
-\textbf{Empresa} & \textbf{Itens sugeridos} & \textbf{Área principal} & \textbf{Estratégia}\\
+\textbf{Rank} & \textbf{Empresa} & \textbf{Score} & \textbf{Área principal} & \textbf{Projeto-âncora}\\
 \midrule
 \endhead
-Schneider Electric & CLPs Modicon, IHMs, Altivar, soft-starters, proteção, medição, solar & Automação/Energia & Doação direta e parceria educacional\\
-Vale & Modernização de laboratórios, automação, energia, máquinas, instrumentação e TI & Multidisciplinar & Projeto institucional estruturante\\
-Eneva & Bancadas elétricas, geração, proteção, instrumentação e qualidade de energia & Energia & Parceria educacional\\
-Equatorial Energia & Medidores, TCs/TPs, relés, analisadores, smart grid e solar & Sistemas de Energia & Parceria, edital e cooperação técnica\\
-WEG & Motores, inversores CFW, soft-starters SSW, CLPs, contatores, relés, transformadores & Máquinas/Acionamentos & Laboratório de máquinas e acionamentos\\
-Rockwell Automation & Micro800/CompactLogix, PanelView, PowerFlex e redes industriais & Automação & Célula didática Allen-Bradley\\
-Siemens & S7-1200/S7-1500, LOGO!, IHMs, SINAMICS e softwares & Automação/Digitalização & Laboratório de automação\\
-Altus & Nexto/Xpress, IHMs, Training Box, switches e BluePlant & Automação & Bancadas didáticas nacionais\\
-Intelbras & Switches, Wi-Fi, IoT, CFTV, telecom, racks e fontes & Redes/IoT & Estruturação de laboratório\\
-Petrobras & Computadores, workstations, servidores/HPC e bens elegíveis em chamadas & TI/Pesquisa & Monitoramento de chamadas públicas\\
+1 & Schneider Electric & 96 & Automação/Energia & Laboratório de Gestão de Energia e Automação\\
+2 & Equatorial Energia & 95 & Sistemas de Energia & Medição, Proteção e Smart Grid\\
+3 & Vale & 94 & Multidisciplinar & Modernização estruturante de laboratórios\\
+4 & SEL & 93 & Proteção/Subestações & Proteção, Controle e IEC 61850\\
+5 & WEG & 92 & Máquinas/Acionamentos & Máquinas e Acionamentos Elétricos\\
+6 & Eneva & 90 & Energia/Geração & Geração, Qualidade e Proteção\\
+7 & Alcoa/Alumar & 89 & Indústria/Manutenção & Modernização e Instrumentação Industrial\\
+8 & Altus & 88 & Automação & Bancadas Nexto/Xpress e BluePlant\\
+9 & Intelbras & 87 & Redes/IoT & Redes, IoT e Telecomunicações\\
+10 & Siemens & 86 & Automação/Digitalização & Automação e Digitalização Industrial\\
 \bottomrule
 \end{longtable}
 
-\section{Empresas de alta prioridade}
-Festo, SMC, ABB, Alcoa/Alumar, Suzano, Hitachi Energy, Eaton, Phoenix Contact, Emerson e Fluke.
+\section{Ondas seguintes}
+A \textbf{Onda 2} concentra empresas com alta aderência e bons canais, incluindo Endress+Hauser, Hitachi Energy, Festo, Rockwell Automation, ABB, Suzano, Phoenix Contact, Eaton, Emerson, Fluke, Rohde \& Schwarz, Infineon, Texas Instruments, OMRON, Beckhoff, WAGO, SICK, ifm, Balluff, Pepperl+Fuchs, Weidmüller, Delta, Yokogawa, HIOKI, Megger e Minipa.
 
-\section{Empresas de oportunidade}
-Keysight, Tektronix/Keithley, National Instruments, Yaskawa, Mitsubishi Electric, Bosch Rexroth, Cisco, Huawei, Dell Technologies e Lenovo.
+A \textbf{Onda 3} reúne oportunidades que dependem mais de distribuidor, custo elevado, programas específicos, editais ou menor prioridade imediata. O ranking completo está em \texttt{prospeccao/ranking\_60\_empresas.csv}.
 
-\section{Detalhamento dos pedidos prioritários}
-\subsection{Schneider Electric}
-\begin{itemize}[leftmargin=*]
-\item 10 CLPs Modicon;
-\item 10 IHMs;
-\item 10 inversores Altivar;
-\item 10 soft-starters;
-\item kits de proteção, contatores, relés, fontes e medição;
-\item 2 kits fotovoltaicos didáticos.
-\end{itemize}
+\section{Estratégia técnica}
+Para as empresas da primeira onda, o pedido deve conter três níveis:
+\begin{enumerate}[leftmargin=*]
+\item \textbf{Ideal}: laboratório completo ou projeto estruturante;
+\item \textbf{Intermediário}: conjunto de bancadas;
+\item \textbf{Mínimo}: itens unitários, demonstração, software, acessórios ou treinamento.
+\end{enumerate}
 
-\subsection{WEG}
-\begin{itemize}[leftmargin=*]
-\item 8 motores para práticas didáticas;
-\item 6 inversores CFW;
-\item 4 soft-starters SSW;
-\item 4 CLPs e módulos de E/S;
-\item kits de contatores e relés;
-\item 2 transformadores didáticos.
-\end{itemize}
-
-\subsection{Rockwell Automation}
-\begin{itemize}[leftmargin=*]
-\item 6 kits Micro850;
-\item 2 CompactLogix;
-\item 4 IHMs PanelView;
-\item 4 inversores PowerFlex;
-\item switches industriais e sensores.
-\end{itemize}
-
-\subsection{Siemens}
-\begin{itemize}[leftmargin=*]
-\item 6 S7-1200;
-\item 2 S7-1500;
-\item 6 IHMs;
-\item 6 SINAMICS;
-\item 4 LOGO!;
-\item licenças educacionais pertinentes.
-\end{itemize}
-
-\subsection{Equatorial Energia}
-\begin{itemize}[leftmargin=*]
-\item medidores eletrônicos e inteligentes;
-\item kits de TCs e TPs;
-\item relés de proteção;
-\item analisadores de qualidade da energia;
-\item módulos de geração distribuída e smart grid.
-\end{itemize}
+Os anexos específicos estão em \texttt{anexos/}. A matriz por laboratório está em \texttt{laboratorios/matriz\_laboratorio\_empresa.csv}.
 
 \section{Faixa financeira de planejamento}
-Os valores utilizados para planejamento interno são apenas estimativas preliminares e não devem ser tratados como cotação oficial. A definição de valor deverá ocorrer por documentação da empresa, pesquisa de mercado, nota fiscal, laudo ou outro meio admitido pelos setores competentes.
+Qualquer valor usado para planejamento interno deverá ser tratado como estimativa e nunca como cotação oficial. A valoração final de eventual doação deve utilizar documentação da empresa, pesquisa de mercado, nota fiscal, laudo ou outro meio admitido pelos setores competentes.
 
 \begin{destaque}
-Recomenda-se que cada empresa receba um pedido específico, compatível com seu portfólio e sua política de investimento, em vez de uma solicitação genérica de equipamentos.
+O objetivo do plano é maximizar a chance de sucesso, evitando pedidos genéricos. Cada empresa deve receber um escopo compatível com seu portfólio, seu histórico educacional e sua presença regional.
 \end{destaque}
 \end{document}
