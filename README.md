@@ -25,6 +25,12 @@ A pasta `empresas/` contém um modelo-base compartilhado e **60 ofícios LaTeX p
 
 A classificação indica prioridade de prospecção do DEE. Nem toda empresa possui programa público permanente de doação; quando não há confirmação, o modelo é tratado como prospecção estratégica de parceria, cessão, demonstração, apoio educacional ou eventual doação conforme política da empresa.
 
+### Contatos no Brasil
+
+O arquivo `empresas/contatos_brasil.tex` centraliza o **contato prioritário para doação/parceria** e o **canal brasileiro de cada uma das 60 empresas**. Cada ofício carrega automaticamente esse cadastro e exibe, junto ao destinatário, a situação do contato: operação oficial direta no Brasil, canal regional/distribuidor ou contato que deve ser confirmado antes do envio.
+
+A base foi verificada em **13/09/2026**. Por serem informações externas sujeitas a alteração, telefone, e-mail, endereço e responsável nominal devem ser conferidos novamente no canal oficial imediatamente antes da expedição definitiva do ofício. A base evita duplicação: mudanças de contato devem ser feitas somente em `empresas/contatos_brasil.tex`.
+
 ### Cobertura tecnológica
 
 A prospecção contempla Automação Industrial, Robótica, Redes Industriais, Instrumentação, Eletrônica Analógica e Digital, Telecomunicações/RF, Redes Ópticas, Sistemas Digitais, IoT, Eletrônica de Potência, Semicondutores de Potência, Medição Elétrica, Qualidade de Energia, Máquinas e Acionamentos, Instalações, Proteção, Subestações, Sistemas Elétricos de Potência, Smart Grid, Geração Distribuída, Aquisição de Dados, Manutenção, Pneumática, Hidráulica e Computação para Engenharia.
@@ -44,7 +50,7 @@ A prospecção contempla Automação Industrial, Robótica, Redes Industriais, I
 
 ## Uso
 
-Os modelos institucionais utilizam `modelos/preambulo.tex`. Os documentos da pasta `empresas/` carregam `empresas/base_empresa.tex`, que centraliza o texto e a diagramação comum.
+Os modelos institucionais utilizam `modelos/preambulo.tex`. Os documentos da pasta `empresas/` carregam `empresas/base_empresa.tex`, que centraliza o texto e a diagramação comum, e `empresas/contatos_brasil.tex`, que centraliza os destinatários e canais brasileiros.
 
 Para gerar um ofício personalizado no Overleaf, selecione o arquivo `.tex` da empresa desejada como documento principal, use pdfLaTeX, preencha número/data do ofício e revise as quantidades. Os dados de contato do Chefe do DEE já estão incorporados ao modelo-base.
 
