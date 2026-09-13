@@ -1,0 +1,55 @@
+% Preâmbulo institucional comum — DEE/IFMA
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{tcolorbox}
+\usepackage{ragged2e}
+
+\geometry{a4paper,top=2.2cm,bottom=2.2cm,left=2.5cm,right=2.5cm}
+\definecolor{azulpetroleo}{HTML}{0F4C5C}
+\definecolor{ambar}{HTML}{C8892D}
+\definecolor{cinzaclaro}{HTML}{F2F5F7}
+\definecolor{cinzaescuro}{HTML}{374151}
+\hypersetup{colorlinks=true,linkcolor=azulpetroleo,urlcolor=azulpetroleo,citecolor=azulpetroleo}
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0.35em}
+\onehalfspacing
+\titleformat{\section}{\large\bfseries\color{azulpetroleo}}{}{0pt}{}
+\titleformat{\subsection}{\normalsize\bfseries\color{azulpetroleo}}{}{0pt}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Departamento de Eletroeletrônica — DEE}
+\fancyhead[R]{\small IFMA — Campus São Luís/Monte Castelo}
+\fancyfoot[C]{\small Página \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\campo}[1]{\textcolor{ambar}{\textbf{[#1]}}}
+\newcommand{\instituicao}{Instituto Federal de Educação, Ciência e Tecnologia do Maranhão}
+\newcommand{\campus}{Campus São Luís/Monte Castelo}
+\newcommand{\departamento}{Departamento de Eletroeletrônica — DEE}
+\newcommand{\cidade}{São Luís — MA}
+\newcommand{\cabecalhoInstitucional}{%
+\begin{center}
+{\Large\bfseries\color{azulpetroleo}\instituicao}\\[2mm]
+{\large\bfseries\campus}\\[1mm]
+{\normalsize\departamento}
+\end{center}
+\vspace{2mm}
+\hrule
+\vspace{4mm}
+}
+\newtcolorbox{destaque}{colback=cinzaclaro,colframe=azulpetroleo,boxrule=0.6pt,arc=2mm}
